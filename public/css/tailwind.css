@@ -67,6 +67,7 @@
 .sidebar .nav-list{
   margin-top: 20px;
   height: 100%;
+  padding: 0;
 }
 .sidebar li{
   position: relative;
@@ -237,11 +238,11 @@
   width: calc(100% - 250px);
 }
 .home-section .text{
-  display: inline-block;
+  /* display: inline-block;
   color: #11101d;
   font-size: 25px;
   font-weight: 500;
-  margin: 18px
+  margin: 18px */
 }
 @media (max-width: 420px) {
   .sidebar li .tooltip{
