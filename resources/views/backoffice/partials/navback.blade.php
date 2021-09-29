@@ -29,7 +29,13 @@
         <span class="tooltip"> </span>
       </li> --}}
 
-
+      <li>
+        <a href="{{route('portfolios.index')}}">
+            <i class='bx bxs-photo-album'></i>
+            <span class="links_name">Portfolio</span>
+        </a>
+        <span class="tooltip">Portfolio</span>
+    </li>
 
         <li>
             <a href="{{route('users.index')}}">

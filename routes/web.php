@@ -1,6 +1,8 @@
 <?php
 
+use App\Http\Controllers\PortfolioController;
 use App\Http\Controllers\UserController;
+use App\Models\Portfolio;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -19,7 +21,8 @@ use Illuminate\Support\Facades\Route;
 
 
 Route::get('/', function () {
-    return view('front.welcome');
+    $portfolio = Portfolio::all();
+    return view('front.welcome', compact('portfolio'));
 })->name('front');
 
 /*-------------------------------BACKOFFICE----------------------------- */
@@ -55,7 +58,7 @@ Route::get('/dashboard', function () {
 
 /*-----------------------PORTFOLIO----------------------*/
 
-
+Route::resource('/portfolios', PortfolioController::class);
 
 /*-----------------------TESTIMONIALS-------------------*/
 
