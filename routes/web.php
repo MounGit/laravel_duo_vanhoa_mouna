@@ -34,7 +34,11 @@ Route::get('/dashboard', function () {
 
 /*-----------------------HEADER-------------------------*/
 
+// get index
 
+// get edit -> id 
+
+// put update -> id 
 
 /*-----------------------ABOUT--------------------------*/
 
