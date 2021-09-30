@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\About;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class AboutController extends Controller
 {
@@ -14,7 +15,8 @@ class AboutController extends Controller
      */
     public function index()
     {
-        //
+        $about = About::all();
+        return view('backoffice.2about.about', compact('about'));
     }
 
     /**
@@ -55,9 +57,10 @@ class AboutController extends Controller
      * @param  \App\Models\About  $about
      * @return \Illuminate\Http\Response
      */
-    public function edit(About $about)
+    public function edit(About $id)
     {
-        //
+        $about = $id;
+        return view('backoffice.2about.about', compact('about'));
     }
 
     /**
@@ -67,9 +70,24 @@ class AboutController extends Controller
      * @param  \App\Models\About  $about
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, About $about)
+    public function update(Request $request, About $id)
     {
-        //
+        $request->validate([
+            "titre" => "required",
+            "texte" => "required",
+            
+        ]);
+        
+        
+
+        $about=$id;
+        $about->titre = $request->titre;
+        $about->texte = $request->texte;
+        $about->save();
+
+        
+
+        return redirect()->route('about')->with('message', 'About modifié avec succès');
     }
 
     /**

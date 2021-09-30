@@ -15,7 +15,15 @@
             <div class="col-xl-7 d-flex align-items-stretch" data-aos="fade-left">
               <div class="icon-boxes d-flex flex-column justify-content-center">
                 <div class="row">
+
+                  @foreach ($about as $item)
                   <div class="col-md-6 icon-box" data-aos="fade-up" data-aos-delay="100">
+                    <i class="bx bx-receipt"></i>
+                    <h4>{{$item->titre}}</h4>
+                    <p>{{$item->texte}}</p>
+                  </div>
+                  @endforeach
+                  {{-- <div class="col-md-6 icon-box" data-aos="fade-up" data-aos-delay="100">
                     <i class="bx bx-receipt"></i>
                     <h4>Corporis voluptates sit</h4>
                     <p>Consequuntur sunt aut quasi enim aliquam quae harum pariatur laboris nisi ut aliquip</p>
@@ -34,7 +42,7 @@
                     <i class="bx bx-shield"></i>
                     <h4>Beatae veritatis</h4>
                     <p>Expedita veritatis consequuntur nihil tempore laudantium vitae denat pacta</p>
-                  </div>
+                  </div> --}}
                 </div>
               </div><!-- End .content-->
             </div>

@@ -1,7 +1,7 @@
 @extends('backoffice.template.mainback')
 
 @section('title')
-    Modifier About
+    Editer un service
 @endsection
 
 
@@ -24,7 +24,7 @@
         </div>
     @endif
 
-        <form  class="d-flex flex-column w-75" enctype="multipart/form-data" action="{{ route('aboutUpdate', $about->id) }}" method="post">
+        <form  class="d-flex flex-column w-75" enctype="multipart/form-data" action="{{ route('services.update', $service->id) }}" method="post">
             @csrf
             @method('PUT')
 
@@ -37,11 +37,11 @@
     
     <div>   
         <label class="text-dark" for="titre">Titre: </label>
-        <input class="text-dark" name="titre" id="titre" value="{{ $about->titre }}">
+        <input class="text-dark" name="titre" id="titre" value="{{ $testimonial->titre }}">
     </div>
     <div>
         <label class="text-dark" for="texte">Texte: </label>
-        <input class="text-dark" name="texte" id="texte" value="{{ $about->texte }}">
+        <input class="text-dark" name="texte" id="texte" value="{{ $testimonial->texte }}">
     </div>
     
             <button class="btn btn-success w-25 mt-3 text-dark" type="submit">Modifier</button>

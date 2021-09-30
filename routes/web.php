@@ -5,6 +5,11 @@ use App\Http\Controllers\TeamController;
 use App\Http\Controllers\TestimonialController;
 use App\Models\Testimonial;
 use App\Models\Team;
+use App\Http\Controllers\PortfolioController;
+use App\Http\Controllers\ServiceController;
+use App\Http\Controllers\UserController;
+use App\Models\About;
+use App\Models\Portfolio;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -25,7 +30,11 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     $testimonial=Testimonial::all();
     $team=Team::all();
-    return view('front.welcome',compact('testimonial','team'));
+    $portfolio = Portfolio::all();
+    $about=About::all();
+    return view('front.welcome',compact('testimonial','team','portfolio','about'));
+    
+    
 })->name('front');
 
 /*-------------------------------BACKOFFICE----------------------------- */
@@ -42,7 +51,11 @@ Route::get('/dashboard', function () {
 
 /*-----------------------HEADER-------------------------*/
 
+// get index
 
+// get edit -> id 
+
+// put update -> id 
 
 /*-----------------------ABOUT--------------------------*/
 
@@ -64,11 +77,11 @@ Route::put('/about/{id}/update', [AboutController::class, 'update'])
 
 /*-----------------------SERVICES-----------------------*/
 
-
+Route::resource('/services', ServiceController::class);
 
 /*-----------------------PORTFOLIO----------------------*/
 
-
+Route::resource('/portfolios', PortfolioController::class);
 
 /*-----------------------TESTIMONIALS-------------------*/
 
@@ -88,6 +101,8 @@ Route::resource('backoffice/teams',TeamController::class);
 
 /*-----------------------USERS--------------------------*/
 
+
+Route::resource('/users', UserController::class);
 
 
 require __DIR__.'/auth.php';
