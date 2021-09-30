@@ -1,5 +1,10 @@
 <?php
 
+use App\Http\Controllers\AboutController;
+use App\Http\Controllers\TeamController;
+use App\Http\Controllers\TestimonialController;
+use App\Models\Testimonial;
+use App\Models\Team;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -18,7 +23,9 @@ use Illuminate\Support\Facades\Route;
 
 
 Route::get('/', function () {
-    return view('front.welcome');
+    $testimonial=Testimonial::all();
+    $team=Team::all();
+    return view('front.welcome',compact('testimonial','team'));
 })->name('front');
 
 /*-------------------------------BACKOFFICE----------------------------- */
@@ -28,6 +35,7 @@ Route::get('/', function () {
 /*-----------------------DASHBOARD----------------------*/
 
 Route::get('/dashboard', function () {
+
     return view('dashboard');
 })->middleware(['auth'])->name('dashboard');
 
@@ -38,7 +46,17 @@ Route::get('/dashboard', function () {
 
 /*-----------------------ABOUT--------------------------*/
 
+Route::get('/backoffice/about', [AboutController::class, 'index'])
 
+->name('about');
+
+Route::get('/about/{id}/edit', [AboutController::class, 'edit'])
+
+->name('aboutEdit');
+
+Route::put('/about/{id}/update', [AboutController::class, 'update'])
+
+->name('aboutUpdate');
 
 /*-----------------------FEATURES-----------------------*/
 
@@ -54,11 +72,11 @@ Route::get('/dashboard', function () {
 
 /*-----------------------TESTIMONIALS-------------------*/
 
-
+Route::resource('/backoffice/testimonials',TestimonialController::class);
 
 /*-----------------------TEAM---------------------------*/
 
-
+Route::resource('backoffice/teams',TeamController::class);
 
 /*-----------------------CONTACT------------------------*/
 

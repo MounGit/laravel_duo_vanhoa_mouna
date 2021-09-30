@@ -30,5 +30,12 @@ class DatabaseSeeder extends Seeder
             "role_id" => 1,
             'created_at' => now()
         ]);
+
+        $this->call([
+            TestimonialSeeder::class,
+            TeamSeeder::class,
+            AboutSeeder::class
+        ]);
+    
     }
 }

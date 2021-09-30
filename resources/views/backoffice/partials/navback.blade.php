@@ -21,14 +21,21 @@
 
 
 
-      {{-- <li>
-        <a href="">
+      <li>
+        <a href="{{route('testimonials.index')}}">
          <i class='bx bx-left-arrow-alt' ></i>
-           <span class="links_name"> </span>
+           <span class="links_name">Testimonials </span>
         </a>
-        <span class="tooltip"> </span>
-      </li> --}}
+        <span class="tooltip">Testimonials </span>
+      </li>
 
+      <li>
+        <a href="{{route('teams.index')}}">
+         <i class='bx bx-left-arrow-alt' ></i>
+           <span class="links_name">Teams </span>
+        </a>
+        <span class="tooltip">Teams </span>
+      </li>
 
 
 
