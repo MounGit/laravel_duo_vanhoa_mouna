@@ -21,12 +21,13 @@
             </div>
 
             <div class="row portfolio-container">
+          @foreach ($portfolio as $data)
+                <div class="col-4 portfolio-item filter-app" >
+    
+                        <div class="portfolio-wrap">
+            
 
-                <div class="col-lg-4 col-md-6 portfolio-item filter-app">
-                  @foreach ($portfolio as $data)
-
-                  <div class="portfolio-wrap">
-                            <img src="{{ asset('img/' . $data->url) }}" class="img-fluid" alt="">
+                          <img src="{{ asset('img/' . $data->url) }}" class="img-fluid"  alt="">
                             <div class="portfolio-info">
                                 <h4>{{ $data->name }}</h4>
                                 <p>{{ $data->category }}</p>
@@ -35,14 +36,15 @@
                                         class="portfolio-lightbox" title="App 1"><i class="bx bx-plus"></i></a>
                                     <a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a>
                                 </div>
-                              </div>
-                              @endforeach
 
-                            </div>
+                              </div>
+                                @endforeach
 
                 </div>
 
-                {{-- <div class="col-lg-4 col-md-6 portfolio-item filter-web">
+            </div>
+
+            {{-- <div class="col-lg-4 col-md-6 portfolio-item filter-web">
               <div class="portfolio-wrap">
                 <img src="assets/img/portfolio/portfolio-2.jpg" class="img-fluid" alt="">
                 <div class="portfolio-info">
@@ -154,7 +156,7 @@
               </div>
             </div> --}}
 
-            </div>
+        </div>
 
         </div>
     </section><!-- End Portfolio Section -->
