@@ -46,6 +46,14 @@
       </li>
 
       <li>
+        <a href="{{route('footer')}}">
+         <i class='bx bx-left-arrow-alt' ></i>
+           <span class="links_name">Footer </span>
+        </a>
+        <span class="tooltip">Footer </span>
+      </li>
+
+      <li>
         <a href="{{route('services.index')}}">
          <i class='bx bx-left-arrow-alt' ></i>
            <span class="links_name">Services</span>

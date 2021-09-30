@@ -37,6 +37,8 @@ class DatabaseSeeder extends Seeder
             AboutSeeder::class,
              PortfolioSeeder::class,
              ServiceSeeder::class,
+             FooterSeeder::class,
+             SectionTitresDescriptionSeeder::class
             
         ]);
     

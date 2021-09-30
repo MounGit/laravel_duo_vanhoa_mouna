@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AboutController;
+use App\Http\Controllers\FooterController;
 use App\Http\Controllers\TeamController;
 use App\Http\Controllers\TestimonialController;
 use App\Models\Testimonial;
@@ -9,7 +10,9 @@ use App\Http\Controllers\PortfolioController;
 use App\Http\Controllers\ServiceController;
 use App\Http\Controllers\UserController;
 use App\Models\About;
+use App\Models\Footer;
 use App\Models\Portfolio;
+use App\Models\Service;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -32,7 +35,9 @@ Route::get('/', function () {
     $team=Team::all();
     $portfolio = Portfolio::all();
     $about=About::all();
-    return view('front.welcome',compact('testimonial','team','portfolio','about'));
+    $service=Service::all();
+    $footer=Footer::all();
+    return view('front.welcome',compact('testimonial','team','portfolio','about','service','footer'));
     
     
 })->name('front');
@@ -97,7 +102,17 @@ Route::resource('backoffice/teams',TeamController::class);
 
 /*-----------------------FOOTER-------------------------*/
 
+Route::get('/backoffice/footer', [FooterController::class, 'index'])
 
+->name('footer');
+
+Route::get('/footer/{id}/edit', [FooterController::class, 'edit'])
+
+->name('footerEdit');
+
+Route::put('/footer/{id}/update', [FooterController::class, 'update'])
+
+->name('footertUpdate');
 
 /*-----------------------USERS--------------------------*/
 

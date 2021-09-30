@@ -57,10 +57,10 @@ class AboutController extends Controller
      * @param  \App\Models\About  $about
      * @return \Illuminate\Http\Response
      */
-    public function edit(About $id)
+    public function edit($id)
     {
-        $about = $id;
-        return view('backoffice.2about.about', compact('about'));
+        $about = About::find($id);
+        return view('backoffice.2about.aboutEdit', compact('about'));
     }
 
     /**

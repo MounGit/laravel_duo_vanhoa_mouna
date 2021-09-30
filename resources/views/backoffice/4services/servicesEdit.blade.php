@@ -37,11 +37,11 @@
     
     <div>   
         <label class="text-dark" for="titre">Titre: </label>
-        <input class="text-dark" name="titre" id="titre" value="{{ $testimonial->titre }}">
+        <input class="text-dark" name="titre" id="titre" value="{{ $service->titre }}">
     </div>
     <div>
         <label class="text-dark" for="texte">Texte: </label>
-        <input class="text-dark" name="texte" id="texte" value="{{ $testimonial->texte }}">
+        <input class="text-dark" name="texte" id="texte" value="{{ $service->texte }}">
     </div>
     
             <button class="btn btn-success w-25 mt-3 text-dark" type="submit">Modifier</button>
