@@ -74,11 +74,14 @@
         
         <hr class="thin container">
         
-        <div class="mt-3 mb-5">
+        <div class="mt-3">
             <h2>Huitième section </h2>
             <h3 class="my-3">{{ $titre[0]->titrecontact }}</h3>
             <p>{{ $titre[0]->sous_titrecontact }}</p>
         </div>
     
+    </div>
+    <div class="d-flex justify-content-center mt-4 mb-5">
+        <a href="{{ route('titreEdit', $titre[0]->id) }}" class="btn btn-success">Modifer les sections</a>
     </div>
 @endsection
