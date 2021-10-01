@@ -20,6 +20,7 @@ class SectionTitresDescriptionSeeder extends Seeder
                 "titreheader"=>"Build Better Websites With Bikin",
                 "sous_titreheader"=>"We are team of talented designers making websites with Bootstrap",
                 "boutonheader"=>"GET STARTED",
+                "url"=>"hero-img.png",
 
                 "titreabout"=>"Voluptatem dignissimos provident quasi",
                 "sous_titreabout"=>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do 

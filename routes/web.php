@@ -13,6 +13,7 @@ use App\Http\Controllers\UserController;
 use App\Models\About;
 use App\Models\Footer;
 use App\Models\Portfolio;
+use App\Models\SectionTitresDescription;
 use App\Models\Service;
 use Illuminate\Support\Facades\Route;
 
@@ -38,7 +39,8 @@ Route::get('/', function () {
     $about=About::all();
     $service=Service::all();
     $footer=Footer::all();
-    return view('front.welcome',compact('testimonial','team','portfolio','about','service','footer'));
+    $titre=SectionTitresDescription::all();
+    return view('front.welcome',compact('testimonial','team','portfolio','about','service','footer','titre'));
     
     
 })->name('front');
