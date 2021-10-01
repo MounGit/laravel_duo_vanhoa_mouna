@@ -15,6 +15,7 @@ class SectionTitresDescription extends Model
     "titreheader",
     "sous_titreheader",
     "boutonheader",
+    "url",
     "titreabout",
     "boutonabout",
     "titrefeatures",

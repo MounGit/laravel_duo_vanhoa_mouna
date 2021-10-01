@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\SectionTitresDescription;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class SectionTitresDescriptionController extends Controller
 {
@@ -25,6 +26,7 @@ class SectionTitresDescriptionController extends Controller
             "titreheader" => "required",
             "sous_titreheader" => "required",
             "boutonheader" => "required",
+            "url"=>"required",
             "titreabout" => "required",
             "boutonabout" => "required",
             "titrefeatures" => "required",
@@ -41,13 +43,14 @@ class SectionTitresDescriptionController extends Controller
             "sous_titrecontact" => "required"
             
         ]);
-        
-        
-
         $titre=$id;
+        Storage::disk('public')->delete('img/'.$titre->url);
+
+        
         $titre->titreheader = $request->titreheader;
         $titre->sous_titreheader = $request->sous_titreheader;
         $titre->boutonheader = $request->boutonheader;
+        $titre->url = $request->file('url')->hashName();
         $titre->titreabout = $request->titreabout;
         $titre->boutonabout = $request->boutonabout;
         $titre->titrefeatures = $request->titrefeatures;
@@ -64,7 +67,7 @@ class SectionTitresDescriptionController extends Controller
         $titre->sous_titrecontact = $request->sous_titrecontact;
         $titre->save();
 
-        
+        $request->file('url')->storePublicly('img', 'public');
 
         return redirect()->route('titre')->with('message', 'titre modifié avec succès');
     }

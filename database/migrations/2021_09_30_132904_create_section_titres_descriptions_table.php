@@ -18,6 +18,7 @@ class CreateSectionTitresDescriptionsTable extends Migration
             $table->string('titreheader');
             $table->text('sous_titreheader');
             $table->string('boutonheader');
+            $table->string('url');
             $table->string('titreabout');
             $table->text('sous_titreabout');
             $table->string('boutonabout');

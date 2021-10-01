@@ -5,11 +5,11 @@
           <div class="row no-gutters">
             <div class="content col-xl-5 d-flex align-items-stretch" data-aos="fade-right">
               <div class="content">
-                <h3>Voluptatem dignissimos provident quasi</h3>
+                <h3>{{$titre[0]->titreabout}}</h3>
                 <p>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Duis aute irure dolor in reprehenderit
+                  {{$titre[0]->sous_titreabout}}
                 </p>
-                <a href="#" class="about-btn">About us <i class="bx bx-chevron-right"></i></a>
+                <a href="#" class="about-btn">{{$titre[0]->boutonabout}}<i class="bx bx-chevron-right"></i></a>
               </div>
             </div>
             <div class="col-xl-7 d-flex align-items-stretch" data-aos="fade-left">
