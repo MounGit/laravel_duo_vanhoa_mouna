@@ -10,20 +10,23 @@
           <div class="testimonials-slider swiper-container" data-aos="fade-up" data-aos-delay="100">
             <div class="swiper-wrapper">
   
+              @foreach ($testimonial as $item)
               <div class="swiper-slide">
                 <div class="testimonial-item">
                   <p>
                     <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-                    Proin iaculis purus consequat sem cure digni ssim donec porttitora entum suscipit rhoncus. Accusantium quam, ultricies eget id, aliquam eget nibh et. Maecen aliquam, risus at semper.
+                    {{$item->description}}
                     <i class="bx bxs-quote-alt-right quote-icon-right"></i>
                   </p>
-                  <img src="assets/img/testimonials/testimonials-1.jpg" class="testimonial-img" alt="">
-                  <h3>Saul Goodman</h3>
-                  <h4>Ceo &amp; Founder</h4>
+                  <img src="{{ asset("img/" . $item->image) }}" alt="" class="testimonial-img">
+                  <h3>{{$item->nom}}</h3>
+                  <h4>{{$item->metier}}</h4>
                 </div>
-              </div><!-- End testimonial item -->
+              </div><!-- End testimonial item --> 
+              @endforeach
+              
   
-              <div class="swiper-slide">
+              {{-- <div class="swiper-slide">
                 <div class="testimonial-item">
                   <p>
                     <i class="bx bxs-quote-alt-left quote-icon-left"></i>
@@ -73,7 +76,7 @@
                   <h3>John Larson</h3>
                   <h4>Entrepreneur</h4>
                 </div>
-              </div><!-- End testimonial item -->
+              </div><!-- End testimonial item --> --}}
   
             </div>
             <div class="swiper-pagination"></div>

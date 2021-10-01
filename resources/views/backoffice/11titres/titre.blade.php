@@ -6,8 +6,8 @@
 
 
 @section('content')
-    <div>
-        <div>8
+    <div class="d-flex flex-column">
+        <div>
             <h2>Première section </h2>
             <h3>{{$titre[0]->titreheader}}</h3>
             <p>{{$titre[0]->sous_titreheader}}</p>

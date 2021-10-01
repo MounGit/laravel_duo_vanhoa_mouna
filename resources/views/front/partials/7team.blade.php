@@ -9,7 +9,26 @@
   
           <div class="row">
   
+            @foreach ($team as $item)
             <div class="col-xl-3 col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+              <div class="member">
+                <img src="{{ asset("img/" . $item->image) }}" alt="" class="img-fluid">
+                <div class="member-info">
+                  <div class="member-info-content">
+                    <h4>{{$item->nom}}</h4>
+                    <span>{{$item->metier}}</span>
+                  </div>
+                  <div class="social">
+                    <a href=""><i class="bi bi-twitter"></i></a>
+                    <a href=""><i class="bi bi-facebook"></i></a>
+                    <a href=""><i class="bi bi-instagram"></i></a>
+                    <a href=""><i class="bi bi-linkedin"></i></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            @endforeach
+            {{-- <div class="col-xl-3 col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
               <div class="member">
                 <img src="assets/img/team/team-1.jpg" class="img-fluid" alt="">
                 <div class="member-info">
@@ -79,7 +98,7 @@
                   </div>
                 </div>
               </div>
-            </div>
+            </div> --}}
   
           </div>
   

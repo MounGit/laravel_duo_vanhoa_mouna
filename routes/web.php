@@ -3,11 +3,21 @@
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\FeaturesController;
 use App\Http\Controllers\HeaderController;
+use App\Http\Controllers\AboutController;
+use App\Http\Controllers\FooterController;
+use App\Http\Controllers\TeamController;
+use App\Http\Controllers\TestimonialController;
+use App\Models\Testimonial;
+use App\Models\Team;
 use App\Http\Controllers\PortfolioController;
+use App\Http\Controllers\ServiceController;
 use App\Http\Controllers\UserController;
 use App\Models\Feature;
 use App\Models\Header;
+use App\Models\About;
+use App\Models\Footer;
 use App\Models\Portfolio;
+use App\Models\Service;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -26,10 +36,17 @@ use Illuminate\Support\Facades\Route;
 
 
 Route::get('/', function () {
-    $portfolio = Portfolio::all();
+    $testimonial=Testimonial::all()->take(5);
+    $team=Team::all()->take(4);
+    $portfolio = Portfolio::all()->take(9);
     $header = Header::all();
     $feature = Feature::all()->take(4);
-    return view('front.welcome', compact('portfolio', 'header', 'feature'));
+    $about=About::all()->take(4);
+    $service=Service::all()->take(4);
+    $footer=Footer::all();
+    return view('front.welcome',compact('testimonial','team','portfolio','about','service','footer', 'header', 'feature'));
+    
+    
 })->name('front');
 /*-------------------------------BACKOFFICE----------------------------- */
 
@@ -38,6 +55,7 @@ Route::get('/', function () {
 /*-----------------------DASHBOARD----------------------*/
 
 Route::get('/dashboard', function () {
+
     return view('dashboard');
 })->middleware(['auth'])->name('dashboard');
 
@@ -53,7 +71,17 @@ Route::put('/headers/{id}/update', [HeaderController::class, "update"])->name('h
 
 /*-----------------------ABOUT--------------------------*/
 
+Route::get('/backoffice/about', [AboutController::class, 'index'])
 
+->name('about');
+
+Route::get('/about/{id}/edit', [AboutController::class, 'edit'])
+
+->name('aboutEdit');
+
+Route::put('/about/{id}/update', [AboutController::class, 'update'])
+
+->name('aboutUpdate');
 
 /*-----------------------FEATURES-----------------------*/
 
@@ -61,7 +89,7 @@ Route::resource('/features', FeaturesController::class);
 
 /*-----------------------SERVICES-----------------------*/
 
-
+Route::resource('/services', ServiceController::class);
 
 /*-----------------------PORTFOLIO----------------------*/
 
@@ -69,11 +97,11 @@ Route::resource('/portfolios', PortfolioController::class);
 
 /*-----------------------TESTIMONIALS-------------------*/
 
-
+Route::resource('/backoffice/testimonials',TestimonialController::class);
 
 /*-----------------------TEAM---------------------------*/
 
-
+Route::resource('backoffice/teams',TeamController::class);
 
 /*-----------------------CONTACT------------------------*/
 
@@ -85,7 +113,17 @@ Route::put('/contacts/{id}/update', [ContactController::class, 'update'])->name(
 
 /*-----------------------FOOTER-------------------------*/
 
+Route::get('/backoffice/footer', [FooterController::class, 'index'])
 
+->name('footer');
+
+Route::get('/footer/{id}/edit', [FooterController::class, 'edit'])
+
+->name('footerEdit');
+
+Route::put('/footer/{id}/update', [FooterController::class, 'update'])
+
+->name('footertUpdate');
 
 /*-----------------------USERS--------------------------*/
 

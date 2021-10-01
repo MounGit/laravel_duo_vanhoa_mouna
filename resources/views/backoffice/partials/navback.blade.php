@@ -2,14 +2,21 @@
     <div class="logo-details">
         {{-- <i class='bx bxl-c-plus-plus icon'></i> --}}
         {{-- <div class="logo_name">CodingLab</div> --}}
+        {{-- <li>
+            <a href="{{ route('front') }}">
+                <i class='bx bx-left-arrow-alt'></i>
+                <span class="links_name">Retour Front</span>
+            </a>
+            <span class="tooltip">Retour Front</span>
+        </li> --}}
         <i class='bx bx-menu' id="btn"></i>
     </div>
     <ul class="nav-list">
-        <li>
+        {{-- <li>
             <i class='bx bx-search'></i>
             <input type="text" placeholder="Search...">
             <span class="tooltip">Search</span>
-        </li>
+        </li> --}}
         <li>
             <a href="{{ route('dashboard') }}">
                 <i class='bx bx-grid-alt'></i>
@@ -25,30 +32,50 @@
             <span class="tooltip">Header</span>
         </li>
         <li>
+            <a href="{{route('about')}}">
+                <i class='bx bxs-info-circle'></i>
+               <span class="links_name">About </span>
+            </a>
+            <span class="tooltip">About </span>
+        </li>
+        <li>
             <a href="{{ route('features.index') }}">
                 <i class='bx bx-mouse-alt'></i>
                 <span class="links_name">Features</span>
             </a>
             <span class="tooltip">Features</span>
         </li>
+        <li>
+            <a href="{{route('services.index')}}">
+                <i class='bx bxs-briefcase'></i>
+               <span class="links_name">Services</span>
+            </a>
+            <span class="tooltip">Services </span>
+          </li>
 
-
-        {{-- <li>
-        <a href="">
-         <i class='bx bx-left-arrow-alt' ></i>
-           <span class="links_name"> </span>
+          <li>
+            <a href="{{route('portfolios.index')}}">
+                <i class='bx bxs-photo-album'></i>
+                <span class="links_name">Portfolio</span>
+            </a>
+            <span class="tooltip">Portfolio</span>
+        </li>
+      <li>
+        <a href="{{route('testimonials.index')}}">
+            <i class='bx bxs-chat'></i>
+           <span class="links_name">Testimonials </span>
         </a>
-        <span class="tooltip"> </span>
-      </li> --}}
+        <span class="tooltip">Testimonials </span>
+      </li>
 
       <li>
-        <a href="{{route('portfolios.index')}}">
-            <i class='bx bxs-photo-album'></i>
-            <span class="links_name">Portfolio</span>
+        <a href="{{route('teams.index')}}">
+            <i class='bx bxl-microsoft-teams'></i>
+           <span class="links_name">Team</span>
         </a>
-        <span class="tooltip">Portfolio</span>
-    </li>
-
+        <span class="tooltip">Team</span>
+      </li>
+      
     <li>
         <a href="{{route('contacts.index')}}">
             <i class='bx bxs-contact' ></i>
@@ -56,6 +83,14 @@
         </a>
         <span class="tooltip">Contact</span>
     </li>
+      <li>
+        <a href="{{route('footer')}}">
+            <i class='bx bx-copyright' ></i>
+           <span class="links_name">Footer </span>
+        </a>
+        <span class="tooltip">Footer </span>
+      </li>
+
         <li>
             <a href="{{route('users.index')}}">
               <i class='bx bxs-user'></i>
@@ -71,10 +106,10 @@
             </a>
             <span class="tooltip">Retour Front</span>
         </li>
-        <li class="profile">
+        {{-- <li class="profile">
             <div class="profile-details">
                 {{-- <img src="profile.jpg" alt="profileImg"> --}}
-                <div class="name_job">
+                {{-- <div class="name_job">
                     <a href="#">
                         <form method="POST" class="nav-link py-3 px-0 pl-5 rounded" action="{{ route('logout') }}">
                             @csrf
@@ -88,7 +123,7 @@
                 </div>
             </div>
             <i class='bx bx-log-out' id="log_out"></i>
-        </li>
+        </li> --}} 
     </ul>
 </div>
 

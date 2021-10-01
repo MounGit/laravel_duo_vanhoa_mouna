@@ -31,14 +31,22 @@ class DatabaseSeeder extends Seeder
             'created_at' => now()
         ]);
 
-        User::factory(15)->create();
-
         $this->call([
             PortfolioSeeder::class,
             HeaderSeeder::class,
             FeaturesSeeder::class,
             ContactSeeder::class,
+            TestimonialSeeder::class,
+            TeamSeeder::class,
+            AboutSeeder::class,
+            ServiceSeeder::class,
+            FooterSeeder::class,
+            SectionTitresDescriptionSeeder::class
         ]);
+    
+        User::factory(15)->create();
+
+        
 
     }
 }
