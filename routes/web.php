@@ -1,5 +1,8 @@
 <?php
 
+use App\Http\Controllers\ContactController;
+use App\Http\Controllers\FeaturesController;
+use App\Http\Controllers\HeaderController;
 use App\Http\Controllers\AboutController;
 use App\Http\Controllers\FooterController;
 use App\Http\Controllers\TeamController;
@@ -10,6 +13,8 @@ use App\Http\Controllers\PortfolioController;
 use App\Http\Controllers\SectionTitresDescriptionController;
 use App\Http\Controllers\ServiceController;
 use App\Http\Controllers\UserController;
+use App\Models\Feature;
+use App\Models\Header;
 use App\Models\About;
 use App\Models\Footer;
 use App\Models\Portfolio;
@@ -33,18 +38,20 @@ use Illuminate\Support\Facades\Route;
 
 
 Route::get('/', function () {
-    $testimonial=Testimonial::all();
-    $team=Team::all();
-    $portfolio = Portfolio::all();
-    $about=About::all();
-    $service=Service::all();
+    $testimonial=Testimonial::all()->take(5);
+    $team=Team::all()->take(4);
+    $portfolio = Portfolio::all()->take(9);
+    $header = Header::all();
+    $feature = Feature::all()->take(4);
+    $about=About::all()->take(4);
+    $service=Service::all()->take(4);
     $footer=Footer::all();
     $titre=SectionTitresDescription::all();
-    return view('front.welcome',compact('testimonial','team','portfolio','about','service','footer','titre'));
+   
+    return view('front.welcome',compact('testimonial','team','portfolio','about','service','footer', 'header', 'feature','titre'));
     
     
 })->name('front');
-
 /*-------------------------------BACKOFFICE----------------------------- */
 
 
@@ -59,11 +66,12 @@ Route::get('/dashboard', function () {
 
 /*-----------------------HEADER-------------------------*/
 
-// get index
+Route::get('/headers', [HeaderController::class, "index"])->name('headers.index');
 
-// get edit -> id 
+Route::get('/headers/{id}/edit', [HeaderController::class, "edit"])->name('headers.edit');
 
-// put update -> id 
+Route::put('/headers/{id}/update', [HeaderController::class, "update"])->name('headers.update');
+
 
 /*-----------------------ABOUT--------------------------*/
 
@@ -81,7 +89,7 @@ Route::put('/about/{id}/update', [AboutController::class, 'update'])
 
 /*-----------------------FEATURES-----------------------*/
 
-
+Route::resource('/features', FeaturesController::class);
 
 /*-----------------------SERVICES-----------------------*/
 
@@ -101,7 +109,11 @@ Route::resource('backoffice/teams',TeamController::class);
 
 /*-----------------------CONTACT------------------------*/
 
+Route::get('/contacts', [ContactController::class, 'index'])->name('contacts.index');
 
+Route::get('/contacts/{id}/edit', [ContactController::class, 'edit'])->name('contacts.edit');
+
+Route::put('/contacts/{id}/update', [ContactController::class, 'update'])->name('contacts.update');
 
 /*-----------------------FOOTER-------------------------*/
 

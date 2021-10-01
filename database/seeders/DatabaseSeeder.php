@@ -32,14 +32,16 @@ class DatabaseSeeder extends Seeder
         ]);
 
         $this->call([
+            PortfolioSeeder::class,
+            HeaderSeeder::class,
+            FeaturesSeeder::class,
+            ContactSeeder::class,
             TestimonialSeeder::class,
             TeamSeeder::class,
             AboutSeeder::class,
-             PortfolioSeeder::class,
-             ServiceSeeder::class,
-             FooterSeeder::class,
-             SectionTitresDescriptionSeeder::class
-            
+            ServiceSeeder::class,
+            FooterSeeder::class,
+            SectionTitresDescriptionSeeder::class
         ]);
     
         User::factory(15)->create();

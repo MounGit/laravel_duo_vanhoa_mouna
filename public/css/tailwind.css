@@ -65,7 +65,7 @@
   line-height: 60px;
 }
 .sidebar .nav-list{
-  margin-top: 20px;
+  /* margin-top: 20px; */
   height: 100%;
   padding: 0;
 }
@@ -105,9 +105,9 @@
   color: #FFF;
   font-weight: 400;
   outline: none;
-  height: 50px;
+  height: 30px;
   width: 100%;
-  width: 50px;
+  width: 30px;
   border: none;
   border-radius: 12px;
   transition: all 0.5s ease;

@@ -35,7 +35,7 @@
                 <option value="Card">Card</option>
               </select>
 
-            <button class="btn btn-success mt-3 w-25" type="submit">Ajouter</button>
+            <button class="btn btn-success mt-3 w-25" type="submit">Modifier</button>
         </form>
     </div>
 @endsection
