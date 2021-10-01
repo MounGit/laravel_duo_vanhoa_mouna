@@ -10,6 +10,7 @@ use App\Http\Controllers\TestimonialController;
 use App\Models\Testimonial;
 use App\Models\Team;
 use App\Http\Controllers\PortfolioController;
+use App\Http\Controllers\SectionTitresDescriptionController;
 use App\Http\Controllers\ServiceController;
 use App\Http\Controllers\UserController;
 use App\Models\Feature;
@@ -130,5 +131,19 @@ Route::put('/footer/{id}/update', [FooterController::class, 'update'])
 
 Route::resource('/users', UserController::class);
 
+
+/*-----------------------Titres--------------------------*/
+
+Route::get('/titre', [SectionTitresDescriptionController::class, 'index'])
+
+->name('titre');
+
+Route::get('/titre/{id}/edit', [SectionTitresDescriptionController::class, 'edit'])
+
+->name('titreEdit');
+
+Route::put('/titre/{id}/update', [SectionTitresDescriptionController::class, 'update'])
+
+->name('titreUpdate');
 
 require __DIR__.'/auth.php';

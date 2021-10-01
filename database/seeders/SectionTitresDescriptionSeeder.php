@@ -3,6 +3,7 @@
 namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\DB;
 
 class SectionTitresDescriptionSeeder extends Seeder
 {
@@ -13,7 +14,7 @@ class SectionTitresDescriptionSeeder extends Seeder
      */
     public function run()
     {
-        DB::table('sectionstitresdescriptions')->insert([
+        DB::table('section_titres_descriptions')->insert([
             [
              
                 "titreheader"=>"Build Better Websites With Bikin",
@@ -27,7 +28,7 @@ class SectionTitresDescriptionSeeder extends Seeder
                 "boutonabout"=>"About us",
 
                 "titrefeatures"=>"Features",
-                "sous_titreheader"=>"Magnam dolores commodi suscipit. Necessitatibus eius consequatur
+                "sous_titrefeatures"=>"Magnam dolores commodi suscipit. Necessitatibus eius consequatur
                 ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam
                 cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis
                 commodi quidem hic quas.",
@@ -37,7 +38,25 @@ class SectionTitresDescriptionSeeder extends Seeder
                 ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. 
                 Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.",
 
+                "titreportfolio"=>"Portfolio",
+                "sous_titreportfolio"=>"Magnam dolores commodi suscipit. Necessitatibus eius consequatur 
+                ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. 
+                Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.",
+
+                "titretestimonials"=>"Testimonials",
+                "sous_titretestimonials"=>"Magnam dolores commodi suscipit. Necessitatibus eius consequatur 
+                ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. 
+                Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.",
+
+                "titreteam"=>"Team",
+                "sous_titreteam"=>"Magnam dolores commodi suscipit. Necessitatibus eius consequatur 
+                ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. 
+                Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.",
                 
+                "titrecontact"=>"Contact",
+                "sous_titrecontact"=>"Magnam dolores commodi suscipit. Necessitatibus eius consequatur 
+                ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. 
+                Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.",
              ]
          ]);
     }

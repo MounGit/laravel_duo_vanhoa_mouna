@@ -16,23 +16,23 @@ class CreateSectionTitresDescriptionsTable extends Migration
         Schema::create('section_titres_descriptions', function (Blueprint $table) {
             $table->id();
             $table->string('titreheader');
-            $table->string('sous_titreheader');
+            $table->text('sous_titreheader');
             $table->string('boutonheader');
             $table->string('titreabout');
-            $table->string('sous_titreabout');
+            $table->text('sous_titreabout');
             $table->string('boutonabout');
             $table->string('titrefeatures');
-            $table->string('sous_titrefeatures');
+            $table->text('sous_titrefeatures');
             $table->string('titreservice');
-            $table->string('sous_titreservice');
+            $table->text('sous_titreservice');
             $table->string('titreportfolio');
-            $table->string('sous_titreportfolio');
+            $table->text('sous_titreportfolio');
             $table->string('titretestimonials');
-            $table->string('sous_titretestimonials');
+            $table->text('sous_titretestimonials');
             $table->string('titreteam');
-            $table->string('sous_titreteam');
+            $table->text('sous_titreteam');
             $table->string('titrecontact');
-            $table->string('sous_titrecontact');
+            $table->text('sous_titrecontact');
             $table->timestamps();
         });
     }
