@@ -1,7 +1,12 @@
 <?php
 
+use App\Http\Controllers\ContactController;
+use App\Http\Controllers\FeaturesController;
+use App\Http\Controllers\HeaderController;
 use App\Http\Controllers\PortfolioController;
 use App\Http\Controllers\UserController;
+use App\Models\Feature;
+use App\Models\Header;
 use App\Models\Portfolio;
 use Illuminate\Support\Facades\Route;
 
@@ -22,9 +27,10 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     $portfolio = Portfolio::all();
-    return view('front.welcome', compact('portfolio'));
+    $header = Header::all();
+    $feature = Feature::all()->take(4);
+    return view('front.welcome', compact('portfolio', 'header', 'feature'));
 })->name('front');
-
 /*-------------------------------BACKOFFICE----------------------------- */
 
 
@@ -38,11 +44,12 @@ Route::get('/dashboard', function () {
 
 /*-----------------------HEADER-------------------------*/
 
-// get index
+Route::get('/headers', [HeaderController::class, "index"])->name('headers.index');
 
-// get edit -> id 
+Route::get('/headers/{id}/edit', [HeaderController::class, "edit"])->name('headers.edit');
 
-// put update -> id 
+Route::put('/headers/{id}/update', [HeaderController::class, "update"])->name('headers.update');
+
 
 /*-----------------------ABOUT--------------------------*/
 
@@ -50,7 +57,7 @@ Route::get('/dashboard', function () {
 
 /*-----------------------FEATURES-----------------------*/
 
-
+Route::resource('/features', FeaturesController::class);
 
 /*-----------------------SERVICES-----------------------*/
 
@@ -70,7 +77,11 @@ Route::resource('/portfolios', PortfolioController::class);
 
 /*-----------------------CONTACT------------------------*/
 
+Route::get('/contacts', [ContactController::class, 'index'])->name('contacts.index');
 
+Route::get('/contacts/{id}/edit', [ContactController::class, 'edit'])->name('contacts.edit');
+
+Route::put('/contacts/{id}/update', [ContactController::class, 'update'])->name('contacts.update');
 
 /*-----------------------FOOTER-------------------------*/
 

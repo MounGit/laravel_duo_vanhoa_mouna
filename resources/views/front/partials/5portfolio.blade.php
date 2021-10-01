@@ -38,11 +38,12 @@
                                 </div>
 
                               </div>
+                            </div>
+
+                          </div>
+              
                                 @endforeach
 
-                </div>
-
-            </div>
 
             {{-- <div class="col-lg-4 col-md-6 portfolio-item filter-web">
               <div class="portfolio-wrap">

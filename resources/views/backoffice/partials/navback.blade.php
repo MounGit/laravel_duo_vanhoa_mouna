@@ -17,8 +17,20 @@
             </a>
             <span class="tooltip">Dashboard</span>
         </li>
-
-
+        <li>
+            <a href="{{ route('headers.index') }}">
+                <i class='bx bx-navigation' ></i>
+                <span class="links_name">Header</span>
+            </a>
+            <span class="tooltip">Header</span>
+        </li>
+        <li>
+            <a href="{{ route('features.index') }}">
+                <i class='bx bx-mouse-alt'></i>
+                <span class="links_name">Features</span>
+            </a>
+            <span class="tooltip">Features</span>
+        </li>
 
 
         {{-- <li>
@@ -37,6 +49,13 @@
         <span class="tooltip">Portfolio</span>
     </li>
 
+    <li>
+        <a href="{{route('contacts.index')}}">
+            <i class='bx bxs-contact' ></i>
+            <span class="links_name">Contact</span>
+        </a>
+        <span class="tooltip">Contact</span>
+    </li>
         <li>
             <a href="{{route('users.index')}}">
               <i class='bx bxs-user'></i>

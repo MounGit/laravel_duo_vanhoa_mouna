@@ -35,6 +35,9 @@ class DatabaseSeeder extends Seeder
 
         $this->call([
             PortfolioSeeder::class,
+            HeaderSeeder::class,
+            FeaturesSeeder::class,
+            ContactSeeder::class,
         ]);
 
     }

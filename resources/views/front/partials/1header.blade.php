@@ -2,19 +2,19 @@
   <header id="header" class="fixed-top">
       <div class="container d-flex align-items-center justify-content-between">
 
-          <h1 class="logo"><a href="index.html">Bikin</a></h1>
+          <h1 class="logo"><a href="index.html">{{$header[0]->name}}</a></h1>
           <!-- Uncomment below if you prefer to use an image logo -->
           <!-- <a href="index.html" class="logo"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
 
           <nav id="navbar" class="navbar">
               <ul>
-                  <li><a class="nav-link scrollto active" href="#hero">Home</a></li>
-                  <li><a class="nav-link scrollto" href="#about">About</a></li>
-                  <li><a class="nav-link scrollto" href="#services">Services</a></li>
-                  <li><a class="nav-link scrollto " href="#portfolio">Portfolio</a></li>
-                  <li><a class="nav-link scrollto" href="#team">Team</a></li>
-                  <li><a class="nav-link scrollto" href="#contact">Contact</a></li>
-                  <li><a class="getstarted scrollto" href="#about">Get Started</a></li>
+                  <li><a class="nav-link scrollto active" href="#hero">{{$header[0]->nav1}}</a></li>
+                  <li><a class="nav-link scrollto" href="#about">{{$header[0]->nav2}}</a></li>
+                  <li><a class="nav-link scrollto" href="#services">{{$header[0]->nav3}}</a></li>
+                  <li><a class="nav-link scrollto " href="#portfolio">{{$header[0]->nav4}}</a></li>
+                  <li><a class="nav-link scrollto" href="#team">{{$header[0]->nav5}}</a></li>
+                  <li><a class="nav-link scrollto" href="#contact">{{$header[0]->nav6}}</a></li>
+                  <li><a class="getstarted scrollto" href="#about">{{$header[0]->nav7}}</a></li>
 
 
 

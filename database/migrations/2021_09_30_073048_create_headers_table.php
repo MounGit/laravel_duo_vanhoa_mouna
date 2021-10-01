@@ -15,6 +15,14 @@ class CreateHeadersTable extends Migration
     {
         Schema::create('headers', function (Blueprint $table) {
             $table->id();
+            $table->string('name');
+            $table->string('nav1');
+            $table->string('nav2');
+            $table->string('nav3');
+            $table->string('nav4');
+            $table->string('nav5');
+            $table->string('nav6');
+            $table->string('nav7');
             $table->timestamps();
         });
     }
