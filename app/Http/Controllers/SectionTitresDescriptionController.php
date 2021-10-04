@@ -22,6 +22,8 @@ class SectionTitresDescriptionController extends Controller
 
     public function update(Request $request, SectionTitresDescription $id)
     {
+        $titre=$id;
+        $this->authorize('update', $titre);
         $request->validate([
             "titreheader" => "required",
             "sous_titreheader" => "required",
@@ -43,7 +45,6 @@ class SectionTitresDescriptionController extends Controller
             "sous_titrecontact" => "required"
             
         ]);
-        $titre=$id;
         Storage::disk('public')->delete('img/'.$titre->url);
 
         

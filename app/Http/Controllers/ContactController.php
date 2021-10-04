@@ -18,6 +18,8 @@ class ContactController extends Controller
     }
 
     public function update(Request $request, Contact $id){
+        $contact = $id;
+        $this->authorize('update', $contact);
         $request->validate([
             "address" =>"required",
             "email1" =>"required",
@@ -26,7 +28,6 @@ class ContactController extends Controller
             "phone2" =>"required"
         ]);
 
-        $contact = $id;
         $contact->address = $request->address;
         $contact->email1 = $request->email1;
         $contact->email2 = $request->email2;

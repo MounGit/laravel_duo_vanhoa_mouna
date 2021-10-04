@@ -126,7 +126,7 @@ class FeaturesController extends Controller
      */
     public function destroy(Feature $feature)
     {
-        $this->authorize('update', $feature);
+        $this->authorize('delete', $feature);
         Storage::disk('public')->delete('img/'. $feature->url);
         $feature->delete();
 
