@@ -56,6 +56,40 @@
                     @endforeach
                 </tbody>
             </table>
+
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th scope="col">Id</th>
+                        <th scope="col">TitrePlus</th>
+                        <th scope="col">Description</th>
+                        <th scope="col">Copyright</th>
+                        
+                        <th></th>
+        
+                    </tr>
+                </thead>
+                <tbody>
+                   <tr>
+                    <th scope="row">{{$footerdroite[0]->id}}</th>
+                        
+                        <td>{{$footerdroite[0]->titreplus}}</td>
+                        <td>{{$footerdroite[0]->description}}</td>
+                        <td>{{$footerdroite[0]->copyright}}</td>
+                        
+                        <td>
+                            <div class="d-flex justify-content-around my-3">
+                                            
+                                            <a class="btn btn-warning" href="{{route('footerEditplus', $footerdroite[0]->id)}}">Modifier</a>
+                                            
+                                        </div>
+                            </td>
+                        
+                        
+                    </tr>
+                   
+                </tbody>
+            </table>
         </section> 
     </div>
 @endsection

@@ -2,11 +2,11 @@
 
 namespace App\Policies;
 
-use App\Models\Footer;
+use App\Models\FooterDroite;
 use App\Models\User;
 use Illuminate\Auth\Access\HandlesAuthorization;
 
-class FooterPolicy
+class FooterDroitePolicy
 {
     use HandlesAuthorization;
 
@@ -25,10 +25,10 @@ class FooterPolicy
      * Determine whether the user can view the model.
      *
      * @param  \App\Models\User  $user
-     * @param  \App\Models\Footer  $footer
+     * @param  \App\Models\FooterDroite  $footerDroite
      * @return \Illuminate\Auth\Access\Response|bool
      */
-    public function view(User $user, Footer $footer)
+    public function view(User $user, FooterDroite $footerDroite)
     {
         //
     }
@@ -48,10 +48,10 @@ class FooterPolicy
      * Determine whether the user can update the model.
      *
      * @param  \App\Models\User  $user
-     * @param  \App\Models\Footer  $footer
+     * @param  \App\Models\FooterDroite  $footerDroite
      * @return \Illuminate\Auth\Access\Response|bool
      */
-    public function update(User $user, Footer $footer)
+    public function update(User $user, FooterDroite $footerDroite)
     {
         return in_array($user->role_id, [1,2]);
     }
@@ -60,10 +60,10 @@ class FooterPolicy
      * Determine whether the user can delete the model.
      *
      * @param  \App\Models\User  $user
-     * @param  \App\Models\Footer  $footer
+     * @param  \App\Models\FooterDroite  $footerDroite
      * @return \Illuminate\Auth\Access\Response|bool
      */
-    public function delete(User $user, Footer $footer)
+    public function delete(User $user, FooterDroite $footerDroite)
     {
         return in_array($user->role_id, [1,2]);
     }
@@ -72,10 +72,10 @@ class FooterPolicy
      * Determine whether the user can restore the model.
      *
      * @param  \App\Models\User  $user
-     * @param  \App\Models\Footer  $footer
+     * @param  \App\Models\FooterDroite  $footerDroite
      * @return \Illuminate\Auth\Access\Response|bool
      */
-    public function restore(User $user, Footer $footer)
+    public function restore(User $user, FooterDroite $footerDroite)
     {
         //
     }
@@ -84,10 +84,10 @@ class FooterPolicy
      * Determine whether the user can permanently delete the model.
      *
      * @param  \App\Models\User  $user
-     * @param  \App\Models\Footer  $footer
+     * @param  \App\Models\FooterDroite  $footerDroite
      * @return \Illuminate\Auth\Access\Response|bool
      */
-    public function forceDelete(User $user, Footer $footer)
+    public function forceDelete(User $user, FooterDroite $footerDroite)
     {
         //
     }

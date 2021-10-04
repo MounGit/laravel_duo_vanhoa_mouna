@@ -16,7 +16,9 @@ use App\Http\Controllers\UserController;
 use App\Models\Feature;
 use App\Models\Header;
 use App\Models\About;
+use App\Models\Contact;
 use App\Models\Footer;
+use App\Models\FooterDroite;
 use App\Models\Portfolio;
 use App\Models\SectionTitresDescription;
 use App\Models\Service;
@@ -47,8 +49,10 @@ Route::get('/', function () {
     $service=Service::all()->take(4);
     $footer=Footer::all();
     $titre=SectionTitresDescription::all();
+    $contact=Contact::all();
+    $footerdroite=FooterDroite::all();
    
-    return view('front.welcome',compact('testimonial','team','portfolio','about','service','footer', 'header', 'feature','titre'));
+    return view('front.welcome',compact('testimonial','team','portfolio','about','service','footer', 'header', 'feature','titre','contact','footerdroite'));
     
     
 })->name('front');
@@ -127,7 +131,15 @@ Route::get('/footer/{id}/edit', [FooterController::class, 'edit'])
 
 Route::put('/footer/{id}/update', [FooterController::class, 'update'])
 
-->name('footertUpdate');
+->name('footerUpdate');
+
+Route::get('/footer/{id}/editplus', [FooterController::class, 'editplus'])
+
+->name('footerEditplus');
+
+Route::put('/footer/{id}/updateplus', [FooterController::class, 'updateDroite'])
+
+->name('footerUpdateDroite');
 
 /*-----------------------USERS--------------------------*/
 

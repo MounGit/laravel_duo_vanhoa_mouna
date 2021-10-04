@@ -28,7 +28,7 @@ class TeamController extends Controller
     public function create()
     {
         $this->authorize('adminweb');
-        return view('backoffice.7team.team');
+        return view('backoffice.7team.teamCreate');
     }
 
     /**
@@ -69,7 +69,7 @@ class TeamController extends Controller
     public function show(Team $team)
     {
         $this->authorize('adminweb');
-        return view('backoffice.7team.team', compact('team'));
+        return view('backoffice.7team.teamShow', compact('team'));
     }
 
     /**
@@ -81,7 +81,7 @@ class TeamController extends Controller
     public function edit(Team $team)
     {
         $this->authorize('adminweb');
-        return view('backoffice.7team.team', compact('team'));
+        return view('backoffice.7team.teamEdit', compact('team'));
     }
 
     /**
