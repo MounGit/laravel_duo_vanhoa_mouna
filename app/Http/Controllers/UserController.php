@@ -41,6 +41,7 @@ class UserController extends Controller
     public function store(Request $request)
     {
         $this->authorize('admin');
+        $this->authorize('create', User::class);
         $request->validate([
             "name" => "required",
             "email" => "required",
@@ -93,6 +94,7 @@ class UserController extends Controller
     public function update(Request $request, User $user)
     {
         $this->authorize('admin');
+        $this->authorize('update', $user);
         $request->validate([
             "name" => "required",
             "email" => "required",
@@ -118,6 +120,7 @@ class UserController extends Controller
     public function destroy(User $user)
     {
         $this->authorize('admin');
+        $this->authorize('delete', $user);
         $user->delete();
         return redirect()->route('users.index')->with('message', 'Utilisateur supprimé avec succès');
 

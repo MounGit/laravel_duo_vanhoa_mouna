@@ -39,6 +39,7 @@ class ServiceController extends Controller
     public function store(Request $request)
     {
         $this->authorize('adminweb');
+        $this->authorize('create', Service::class);
         $request->validate([
             
             "titre" => "required",

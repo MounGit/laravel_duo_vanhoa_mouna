@@ -37,7 +37,7 @@ class TestimonialController extends Controller
      */
     public function store(Request $request)
     {
-        
+        $this->authorize('create', Testimonial::class);
         $request->validate([
             "description" => "required",
             "nom" => "required",
@@ -46,7 +46,7 @@ class TestimonialController extends Controller
 
         ]);
         $testimonial = new Testimonial;
-        $this->authorize('create', $testimonial);
+        
         $testimonial->nom = $request->nom;
         $testimonial->metier = $request->metier;
         $testimonial->description = $request->description;

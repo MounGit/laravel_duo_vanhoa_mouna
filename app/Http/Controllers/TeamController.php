@@ -40,7 +40,7 @@ class TeamController extends Controller
     public function store(Request $request)
     {
         $this->authorize('adminweb');
-        
+        $this->authorize('create', Team::class);
         $request->validate([
             
             "nom" => "required",
@@ -50,7 +50,7 @@ class TeamController extends Controller
         ]);
         $team = new Team;
         $team->nom = $request->nom;
-        $this->authorize('create', $team);
+       
         $team->metier = $request->metier;
         
         $team->image = $request->file("image")->hashName();

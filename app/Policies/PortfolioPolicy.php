@@ -41,7 +41,8 @@ class PortfolioPolicy
      */
     public function create(User $user)
     {
-        //
+        return in_array($user->role_id, [1,2]);
+        
     }
 
     /**
@@ -53,7 +54,8 @@ class PortfolioPolicy
      */
     public function update(User $user, Portfolio $portfolio)
     {
-        //
+        return in_array($user->role_id, [1,2]);
+        
     }
 
     /**
@@ -65,7 +67,7 @@ class PortfolioPolicy
      */
     public function delete(User $user, Portfolio $portfolio)
     {
-        //
+        return in_array($user->role_id, [1,2]);
     }
 
     /**
