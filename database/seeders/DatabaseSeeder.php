@@ -29,7 +29,18 @@ class DatabaseSeeder extends Seeder
             "password" => Hash::make('testtest'),
             "role_id" => 1,
             'created_at' => now()
-        ]);
+        ],["name" => "test2",
+        "email" => "test2@mail.com",
+        "password" => Hash::make('testtest'),
+        "role_id" => 2,
+        'created_at' => now()
+    ],["name" => "test3",
+    "email" => "test3@mail.com",
+    "password" => Hash::make('testtest'),
+    "role_id" => 3,
+    'created_at' => now()
+]
+    );
 
         $this->call([
             PortfolioSeeder::class,

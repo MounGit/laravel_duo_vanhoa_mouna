@@ -15,6 +15,7 @@ class TeamController extends Controller
      */
     public function index()
     {
+        $this->authorize('adminweb');
         $team=Team::all();
         return view('backoffice.7team.team',compact('team')) ;
     }
@@ -26,7 +27,7 @@ class TeamController extends Controller
      */
     public function create()
     {
-        
+        $this->authorize('adminweb');
         return view('backoffice.7team.team');
     }
 
@@ -38,6 +39,7 @@ class TeamController extends Controller
      */
     public function store(Request $request)
     {
+        $this->authorize('adminweb');
         $request->validate([
             
             "nom" => "required",
@@ -64,6 +66,7 @@ class TeamController extends Controller
      */
     public function show(Team $team)
     {
+        $this->authorize('adminweb');
         return view('backoffice.7team.team', compact('team'));
     }
 
@@ -75,6 +78,7 @@ class TeamController extends Controller
      */
     public function edit(Team $team)
     {
+        $this->authorize('adminweb');
         return view('backoffice.7team.team', compact('team'));
     }
 
@@ -87,6 +91,7 @@ class TeamController extends Controller
      */
     public function update(Request $request, Team $team)
     {
+        $this->authorize('adminweb');
         $request->validate([
             
             "nom" => "required",
@@ -112,6 +117,7 @@ class TeamController extends Controller
      */
     public function destroy(Team $team)
     {
+        $this->authorize('adminweb');
         Storage::disk('public')->delete('img/'. $team->url);
         $team->delete();
         return redirect()->route('teams.index')->with('message', 'team supprimé avec succès');

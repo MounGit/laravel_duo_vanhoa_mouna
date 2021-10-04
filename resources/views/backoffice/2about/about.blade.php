@@ -39,8 +39,10 @@
                         <td>{{$data->texte}}</td>
                         <td>
                         <div class="d-flex justify-content-around my-3">
+                                        @can('adminweb')
+                                        <a class="btn btn-warning" href="{{route('aboutEdit', $data->id)}}">Modifier</a>  
+                                        @endcan
                                         
-                                        <a class="btn btn-warning" href="{{route('aboutEdit', $data->id)}}">Modifier</a>
                                         
                                     </div>
                         </td>

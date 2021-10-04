@@ -9,18 +9,21 @@ class FooterController extends Controller
 {
     public function index()
     {
+        $this->authorize('adminweb');
         $footer = Footer::all();
         return view('backoffice.9footer.footer', compact('footer'));
     }
 
     public function edit($id)
     {
+        $this->authorize('adminweb');
         $footer = footer::find($id);
         return view('backoffice.9footer.footerEdit', compact('footer'));
     }
 
     public function update(Request $request, footer $id)
     {
+        $this->authorize('adminweb');
         $request->validate([
             "titre" => "required",
             "link1" => "required",

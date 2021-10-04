@@ -15,6 +15,7 @@ class PortfolioController extends Controller
      */
     public function index()
     {
+        $this->authorize('adminweb');
         $portfolio = Portfolio::all();
         return view('backoffice.5portfolio.portfolio', compact('portfolio'));
     }
@@ -26,6 +27,7 @@ class PortfolioController extends Controller
      */
     public function create()
     {
+        $this->authorize('adminweb');
         return view('backoffice.5portfolio.portfolioCreate');
     }
 
@@ -37,6 +39,7 @@ class PortfolioController extends Controller
      */
     public function store(Request $request)
     {
+        $this->authorize('adminweb');
         $request->validate([
             "url" => "required",
             "name" => "required",
@@ -62,6 +65,7 @@ class PortfolioController extends Controller
      */
     public function show(Portfolio $portfolio)
     {
+        $this->authorize('adminweb');
         return view('backoffice.5portfolio.portfolioShow', compact('portfolio'));
         
     }
@@ -74,6 +78,7 @@ class PortfolioController extends Controller
      */
     public function edit(Portfolio $portfolio)
     {
+        $this->authorize('adminweb');
         return view('backoffice.5portfolio.portfolioEdit', compact('portfolio'));
     }
 
@@ -86,6 +91,7 @@ class PortfolioController extends Controller
      */
     public function update(Request $request, Portfolio $portfolio)
     {
+        $this->authorize('adminweb');
         $request->validate([
             "url" => "required",
             "name" => "required",
@@ -112,6 +118,7 @@ class PortfolioController extends Controller
      */
     public function destroy(Portfolio $portfolio)
     {
+        $this->authorize('adminweb');
         Storage::disk('public')->delete('img/'.$portfolio->url);
         $portfolio->delete();
         return redirect()->route('portfolios.index')->with('message', 'Elément supprimé avec succès');

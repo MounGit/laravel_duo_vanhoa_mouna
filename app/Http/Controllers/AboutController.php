@@ -15,6 +15,7 @@ class AboutController extends Controller
      */
     public function index()
     {
+        $this->authorize('adminweb');
         $about = About::all();
         return view('backoffice.2about.about', compact('about'));
     }
@@ -59,6 +60,7 @@ class AboutController extends Controller
      */
     public function edit($id)
     {
+        $this->authorize('adminweb');
         $about = About::find($id);
         return view('backoffice.2about.aboutEdit', compact('about'));
     }
@@ -72,6 +74,7 @@ class AboutController extends Controller
      */
     public function update(Request $request, About $id)
     {
+        $this->authorize('adminweb');
         $request->validate([
             "titre" => "required",
             "texte" => "required",

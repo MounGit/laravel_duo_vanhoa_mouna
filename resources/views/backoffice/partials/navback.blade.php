@@ -24,6 +24,7 @@
             </a>
             <span class="tooltip">Dashboard</span>
         </li>
+        @can('adminweb')
         <li>
             <a href="{{ route('headers.index') }}">
                 <i class='bx bx-navigation' ></i>
@@ -60,6 +61,8 @@
             </a>
             <span class="tooltip">Portfolio</span>
         </li>
+        @endcan
+        
       <li>
         <a href="{{route('testimonials.index')}}">
             <i class='bx bxs-chat'></i>
@@ -67,7 +70,7 @@
         </a>
         <span class="tooltip">Testimonials </span>
       </li>
-
+      @can('adminweb')
       <li>
         <a href="{{route('teams.index')}}">
             <i class='bx bxl-microsoft-teams'></i>
@@ -105,6 +108,8 @@
             </a>
             <span class="tooltip">Users</span>
         </li>
+      @endcan
+      
 
         <li>
             <a href="{{ route('front') }}">

@@ -27,6 +27,7 @@ class UserController extends Controller
      */
     public function create()
     {
+        $this->authorize('admin');
         $role = Role::all();
         return view('backoffice.10users.userCreate', compact('role'));
     }
@@ -39,6 +40,7 @@ class UserController extends Controller
      */
     public function store(Request $request)
     {
+        $this->authorize('admin');
         $request->validate([
             "name" => "required",
             "email" => "required",
@@ -64,6 +66,7 @@ class UserController extends Controller
      */
     public function show(User $user)
     {
+
         $role = Role::all();
         return view('backoffice.10users.userShow', compact('user', 'role'));
     }
@@ -76,6 +79,7 @@ class UserController extends Controller
      */
     public function edit(User $user)
     {
+        $this->authorize('admin');
         return view('backoffice.10users.userEdit', compact('user'));
     }
 
@@ -88,6 +92,7 @@ class UserController extends Controller
      */
     public function update(Request $request, User $user)
     {
+        $this->authorize('admin');
         $request->validate([
             "name" => "required",
             "email" => "required",
@@ -112,6 +117,7 @@ class UserController extends Controller
      */
     public function destroy(User $user)
     {
+        $this->authorize('admin');
         $user->delete();
         return redirect()->route('users.index')->with('message', 'Utilisateur supprimé avec succès');
 

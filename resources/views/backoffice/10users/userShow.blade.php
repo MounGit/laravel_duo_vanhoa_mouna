@@ -17,12 +17,15 @@
                 <p class="card-text">{{ $user->password }}</p>
 
                 <div class="d-flex justify-content-center my-4">
+                    @can('users', $user)
                     <a class="btn btn-warning mx-2" href="{{ route('users.edit', $user->id) }}">Modifier</a>
                     <form action="{{ route('users.destroy', $user->id) }}" method="post">
                         @csrf
                         @method('DELETE')
                         <button class="btn btn-danger text-black mx-2" type="submit">Supprimer</button>
-                    </form>
+                    </form>  
+                    @endcan
+                    
                 </div>
             </div>
         </div>

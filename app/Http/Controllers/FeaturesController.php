@@ -15,6 +15,7 @@ class FeaturesController extends Controller
      */
     public function index()
     {
+        $this->authorize('adminweb');
         $feature = Feature::all();
         return view('backoffice.3features.feature', compact('feature'));
     }
@@ -26,6 +27,7 @@ class FeaturesController extends Controller
      */
     public function create()
     {
+        $this->authorize('adminweb');
         return view('backoffice.3features.featureCreate');
     }
 
@@ -37,6 +39,7 @@ class FeaturesController extends Controller
      */
     public function store(Request $request)
     {
+        $this->authorize('adminweb');
         $request->validate([
             "url" => "required",
             "title" => "required",
@@ -67,6 +70,7 @@ class FeaturesController extends Controller
      */
     public function show(Feature $feature)
     {
+        $this->authorize('adminweb');
         return view('backoffice.3features.featureShow', compact('feature'));
     }
 
@@ -78,6 +82,7 @@ class FeaturesController extends Controller
      */
     public function edit(Feature $feature)
     {
+        $this->authorize('adminweb');
         return view('backoffice.3features.featureEdit', compact('feature'));
         
     }
@@ -91,6 +96,7 @@ class FeaturesController extends Controller
      */
     public function update(Request $request, Feature $feature)
     {
+        $this->authorize('adminweb');
         $request->validate([
             "url" => "required",
             "title" => "required",
@@ -123,6 +129,7 @@ class FeaturesController extends Controller
      */
     public function destroy(Feature $feature)
     {
+        $this->authorize('adminweb');
         Storage::disk('public')->delete('img/'. $feature->url);
         $feature->delete();
 

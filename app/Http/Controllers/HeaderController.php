@@ -8,16 +8,19 @@ use Illuminate\Http\Request;
 class HeaderController extends Controller
 {
     public function index () {
+        $this->authorize('adminweb');
         $header = Header::all();
         return view('backoffice.1header.header', compact('header'));
     }
 
     public function edit (Header $id) {
+        $this->authorize('adminweb');
         $header = $id;
         return view('backoffice.1header.headerEdit', compact('header'));
     }
 
     public function update (Request $request, Header $id) {
+        $this->authorize('adminweb');
         $header = $id;
         $request->validate([
             "name" => "required",

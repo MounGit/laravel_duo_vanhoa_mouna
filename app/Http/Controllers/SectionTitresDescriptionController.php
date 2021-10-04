@@ -10,18 +10,21 @@ class SectionTitresDescriptionController extends Controller
 {
     public function index()
     {
+        $this->authorize('adminweb');
         $titre = SectionTitresDescription::all();
         return view('backoffice.11titres.titre', compact('titre'));
     }
 
     public function edit($id)
     {
+        $this->authorize('adminweb');
         $titre = SectionTitresDescription::find($id);
         return view('backoffice.11titres.titreEdit', compact('titre'));
     }
 
     public function update(Request $request, SectionTitresDescription $id)
     {
+        $this->authorize('adminweb');
         $request->validate([
             "titreheader" => "required",
             "sous_titreheader" => "required",

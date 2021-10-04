@@ -14,6 +14,7 @@ class ServiceController extends Controller
      */
     public function index()
     {
+        $this->authorize('adminweb');
         $service = Service::all();
         return view('backoffice.4services.services', compact('service'));
     }
@@ -25,6 +26,7 @@ class ServiceController extends Controller
      */
     public function create()
     {
+        $this->authorize('adminweb');
         return view('backoffice.4services.servicesCreate');
     }
 
@@ -36,6 +38,7 @@ class ServiceController extends Controller
      */
     public function store(Request $request)
     {
+        $this->authorize('adminweb');
         $request->validate([
             
             "titre" => "required",
@@ -61,6 +64,7 @@ class ServiceController extends Controller
      */
     public function show(Service $service)
     {
+        $this->authorize('adminweb');
         return view('backoffice.4services.servicesShow', compact('service'));
     }
 
@@ -72,6 +76,7 @@ class ServiceController extends Controller
      */
     public function edit(Service $service)
     {
+        $this->authorize('adminweb');
         return view('backoffice.4services.servicesEdit', compact('service'));
     }
 
@@ -84,6 +89,7 @@ class ServiceController extends Controller
      */
     public function update(Request $request, Service $service)
     {
+        $this->authorize('adminweb');
         $request->validate([
             
             "titre" => "required",
@@ -109,6 +115,7 @@ class ServiceController extends Controller
      */
     public function destroy(Service $service)
     {
+        $this->authorize('adminweb');
         $service->delete();
         return redirect()->route('services.index')->with('message', 'service supprimé avec succès');
     }

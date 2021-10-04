@@ -45,12 +45,15 @@
                         <td>
                             <div class="d-flex justify-content-around my-3">
                                 <a class="btn btn-primary text-black" href="{{ route('users.show', $data->id) }}">Détails</a>
+                                @can('admin', $data)
                                 <a class="btn btn-warning mx-2" href="{{ route('users.edit', $data->id) }}">Modifier</a>
                                 <form action="{{ route('users.destroy', $data->id) }}" method="post">
                                     @csrf
                                     @method('DELETE')
                                     <button class="btn btn-danger text-black" type="submit">Supprimer</button>
                                 </form>
+                                @endcan
+                                
                             </div>
                         </td>
                     </tr>

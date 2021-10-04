@@ -8,16 +8,19 @@ use Illuminate\Http\Request;
 class ContactController extends Controller
 {
     public function index (){
+        $this->authorize('adminweb');
         $contact = Contact::all();
         return view('backoffice.8contact.contact', compact('contact'));
     }
 
     public function edit(Contact $id){
+        $this->authorize('adminweb');
         $contact = $id;
         return view('backoffice.8contact.contactEdit', compact('contact'));
     }
 
     public function update(Request $request, Contact $id){
+        $this->authorize('adminweb');
         $request->validate([
             "address" =>"required",
             "email1" =>"required",
