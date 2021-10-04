@@ -37,6 +37,7 @@ class TestimonialController extends Controller
      */
     public function store(Request $request)
     {
+        
         $request->validate([
             "description" => "required",
             "nom" => "required",
@@ -45,6 +46,7 @@ class TestimonialController extends Controller
 
         ]);
         $testimonial = new Testimonial;
+        $this->authorize('create', $testimonial);
         $testimonial->nom = $request->nom;
         $testimonial->metier = $request->metier;
         $testimonial->description = $request->description;
@@ -86,6 +88,7 @@ class TestimonialController extends Controller
      */
     public function update(Request $request, Testimonial $testimonial)
     {
+        $this->authorize('update', $testimonial);
         $request->validate([
             "description" => "required",
             "nom" => "required",
@@ -111,6 +114,7 @@ class TestimonialController extends Controller
      */
     public function destroy(Testimonial $testimonial)
     {
+        $this->authorize('delete', $testimonial);
         Storage::disk('public')->delete('img/'. $testimonial->url);
         $testimonial->delete();
         return redirect()->route('testimonials.index')->with('message', 'temoignage supprimé avec succès');

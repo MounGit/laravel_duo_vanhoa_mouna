@@ -2,11 +2,11 @@
 
 namespace App\Policies;
 
-use App\Models\Feature;
+use App\Models\Team;
 use App\Models\User;
 use Illuminate\Auth\Access\HandlesAuthorization;
 
-class FeaturesPolicy
+class TeamPolicy
 {
     use HandlesAuthorization;
 
@@ -25,10 +25,10 @@ class FeaturesPolicy
      * Determine whether the user can view the model.
      *
      * @param  \App\Models\User  $user
-     * @param  \App\Models\Features  $features
+     * @param  \App\Models\Team  $team
      * @return \Illuminate\Auth\Access\Response|bool
      */
-    public function view(User $user, Feature $feature)
+    public function view(User $user, Team $team)
     {
         //
     }
@@ -48,36 +48,34 @@ class FeaturesPolicy
      * Determine whether the user can update the model.
      *
      * @param  \App\Models\User  $user
-     * @param  \App\Models\Feature  $features
+     * @param  \App\Models\Team  $team
      * @return \Illuminate\Auth\Access\Response|bool
      */
-    public function update(User $user, Feature $feature)
+    public function update(User $user, Team $team)
     {
         return in_array($user->role_id, [1,2]);
-        
     }
 
     /**
      * Determine whether the user can delete the model.
      *
      * @param  \App\Models\User  $user
-     * @param  \App\Models\Feature  $features
+     * @param  \App\Models\Team  $team
      * @return \Illuminate\Auth\Access\Response|bool
      */
-    public function delete(User $user, Feature $feature)
+    public function delete(User $user, Team $team)
     {
         return in_array($user->role_id, [1,2]);
-        
     }
 
     /**
      * Determine whether the user can restore the model.
      *
      * @param  \App\Models\User  $user
-     * @param  \App\Models\Feature  $features
+     * @param  \App\Models\Team  $team
      * @return \Illuminate\Auth\Access\Response|bool
      */
-    public function restore(User $user, Feature $feature)
+    public function restore(User $user, Team $team)
     {
         //
     }
@@ -86,10 +84,10 @@ class FeaturesPolicy
      * Determine whether the user can permanently delete the model.
      *
      * @param  \App\Models\User  $user
-     * @param  \App\Models\Feature  $features
+     * @param  \App\Models\Team  $team
      * @return \Illuminate\Auth\Access\Response|bool
      */
-    public function forceDelete(User $user, Feature $feature)
+    public function forceDelete(User $user, Team $team)
     {
         //
     }

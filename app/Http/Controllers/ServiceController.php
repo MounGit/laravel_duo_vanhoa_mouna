@@ -90,6 +90,7 @@ class ServiceController extends Controller
     public function update(Request $request, Service $service)
     {
         $this->authorize('adminweb');
+        $this->authorize('update', $service);
         $request->validate([
             
             "titre" => "required",
@@ -116,6 +117,7 @@ class ServiceController extends Controller
     public function destroy(Service $service)
     {
         $this->authorize('adminweb');
+        $this->authorize('delete', $service);
         $service->delete();
         return redirect()->route('services.index')->with('message', 'service supprimé avec succès');
     }

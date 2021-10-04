@@ -22,6 +22,7 @@ class HeaderController extends Controller
     public function update (Request $request, Header $id) {
         $this->authorize('adminweb');
         $header = $id;
+        $this->authorize('update', $header);
         $request->validate([
             "name" => "required",
             "nav1" => "required",

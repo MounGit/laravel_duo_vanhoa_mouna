@@ -38,7 +38,7 @@ class AboutController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $this->authorize('create', About::class);
     }
 
     /**
@@ -75,6 +75,7 @@ class AboutController extends Controller
     public function update(Request $request, About $id)
     {
         $this->authorize('adminweb');
+        $this->authorize('update', $id);
         $request->validate([
             "titre" => "required",
             "texte" => "required",

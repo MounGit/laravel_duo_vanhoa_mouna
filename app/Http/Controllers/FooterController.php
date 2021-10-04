@@ -23,6 +23,7 @@ class FooterController extends Controller
 
     public function update(Request $request, footer $id)
     {
+        $this->authorize('update', $id);
         $this->authorize('adminweb');
         $request->validate([
             "titre" => "required",

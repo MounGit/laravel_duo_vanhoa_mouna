@@ -25,6 +25,7 @@ class SectionTitresDescriptionController extends Controller
     public function update(Request $request, SectionTitresDescription $id)
     {
         $this->authorize('adminweb');
+        
         $request->validate([
             "titreheader" => "required",
             "sous_titreheader" => "required",
