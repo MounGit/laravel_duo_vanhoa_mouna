@@ -27,7 +27,7 @@ class DatabaseSeeder extends Seeder
             "name" => "test",
             "email" => "test@mail.com",
             "password" => Hash::make('testtest'),
-            "role_id" => 3,
+            "role_id" => 1,
             'created_at' => now()
         ],["name" => "test2",
         "email" => "test2@mail.com",
@@ -52,7 +52,9 @@ class DatabaseSeeder extends Seeder
             AboutSeeder::class,
             ServiceSeeder::class,
             FooterSeeder::class,
-            SectionTitresDescriptionSeeder::class
+            SectionTitresDescriptionSeeder::class,
+            FooterDroiteSeeder::class,
+
         ]);
     
         User::factory(15)->create();

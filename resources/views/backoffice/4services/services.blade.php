@@ -1,7 +1,8 @@
 @extends('backoffice.template.mainback')
 
 @section('title')
-    services
+    Services
+    
 @endsection
 
 

@@ -34,6 +34,7 @@ class CreateSectionTitresDescriptionsTable extends Migration
             $table->text('sous_titreteam');
             $table->string('titrecontact');
             $table->text('sous_titrecontact');
+           
             $table->timestamps();
         });
     }

@@ -8,11 +8,10 @@
           <div class="col-lg-3 col-md-6 footer-contact">
             <h3>Bikin</h3>
             <p>
-              A108 Adam Street <br>
-              New York, NY 535022<br>
-              United States <br><br>
-              <strong>Phone:</strong> +1 5589 55488 55<br>
-              <strong>Email:</strong> info@example.com<br>
+              {{$contact[0]->address}}
+              <br><br>
+              <strong>Phone:</strong>{{$contact[0]->phone1}}<br>
+              <strong>Email:</strong> {{$contact[0]->email1}}<br>
             </p>
           </div>
 
@@ -51,8 +50,8 @@
           </div>
  --}}
           <div class="col-lg-4 col-md-6 footer-newsletter">
-            <h4>Join Our Newsletter</h4>
-            <p>Tamen quem nulla quae legam multos aute sint culpa legam noster magna</p>
+            <h4>{{$footerdroite[0]->titreplus}}</h4>
+            <p>{{$footerdroite[0]->description}}</p>
             <form action="" method="post">
               <input type="email" name="email"><input type="submit" value="Subscribe">
             </form>
@@ -66,7 +65,7 @@
 
       <div class="me-md-auto text-center text-md-start">
         <div class="copyright">
-          &copy; Copyright <strong><span>Bikin</span></strong>. All Rights Reserved
+          &copy; {{$footerdroite[0]->copyright}}
         </div>
         <div class="credits">
           <!-- All the links in the footer should remain intact. -->
