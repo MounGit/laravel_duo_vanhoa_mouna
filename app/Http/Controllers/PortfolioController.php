@@ -97,7 +97,7 @@ class PortfolioController extends Controller
         $request->validate([
             "url" => "required",
             "name" => "required",
-            "category" => "required |min:1| max:5"
+            "category" => "required"
         ]);
         
         Storage::disk('public')->delete('img/'.$portfolio->url);
