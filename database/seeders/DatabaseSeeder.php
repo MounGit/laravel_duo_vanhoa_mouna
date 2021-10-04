@@ -46,7 +46,7 @@ class DatabaseSeeder extends Seeder
                 'created_at' => now()
             ]
         ]);
-
+   
         $this->call([
             PortfolioSeeder::class,
             HeaderSeeder::class,
