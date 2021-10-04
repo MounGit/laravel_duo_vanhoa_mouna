@@ -25,13 +25,13 @@
             <form class="container d-flex flex-column w-75" action="{{route('teams.store')}}" enctype="multipart/form-data" method="post">
                 @csrf
 
-                <label for="nom">Nom : </label>
+                <label class="my-3 fw-bold" for="nom">Nom : </label>
                 <input type="text" value="{{old('nom')}}" name="nom" id="nom">
 
-                <label for="image">Photo : </label>
+                <label class="my-3 fw-bold" for="image">Photo : </label>
                 <input type="file" name="image" id="image" value="{{old('image')}}">
 
-                <label for="metier">Métier : </label>
+                <label class="my-3 fw-bold" for="metier">Métier : </label>
                 <input type="text" value="{{old('metier')}}" name="metier" id="metier">
         
                 

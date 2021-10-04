@@ -16,6 +16,7 @@ class UserController extends Controller
      */
     public function index()
     {
+        $this->authorize('admin');
         $user = User::all();
         return view('backoffice.10users.user', compact('user'));
     }

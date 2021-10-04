@@ -14,9 +14,11 @@
         </div>
         @endif
 
+        @can('admin')
         <div class="container d-flex justify-content-center">
             <a class="btn btn-success mt-3 mb-5 fs-4" href="{{route('users.create')}}">Ajouter un utilisateur</a>
         </div>
+        @endcan
 
 
         <table class="table">
