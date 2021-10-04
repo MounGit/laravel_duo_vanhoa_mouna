@@ -29,7 +29,9 @@
 
             <label class="my-3 fw-bold" for="cat">Catégorie : </label>
             <select class="form-select form-select-sm" aria-label=".form-select-sm example" name="category" id="cat">
-                <option selected>Sélectionnez une catégorie</option>
+                <option selected>
+                    {{-- Sélectionnez une catégorie --}}
+                </option>
                 <option value="App">App</option>
                 <option value="Web">Web</option>
                 <option value="Card">Card</option>
