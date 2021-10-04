@@ -1,8 +1,8 @@
 @extends('backoffice.template.mainback')
 
-@section('content')
+@section('title')
 
-<h1>Back Office</h1>
+<h1 class="container">Back Office</h1>
 
 {{-- <x-app-layout>
     <x-slot name="header">

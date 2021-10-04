@@ -7,10 +7,10 @@
 
 @section('content')
     <div>
-        <section class="container">
+        <section class="container d-flex justify-content-center">
 
-            <div class="card" style="width: 18rem;">
-                <img src="{{asset('img/'.$team->image)}}" class="card-img-top" alt="...">
+            <div class="card" style="width: 22rem;">
+                <img src="{{asset('img/'.$team->image)}}" class="card-img-top" style="width: 22rem;" alt="...">
                 <div class="card-body">
                 <h5 class="card-title">{{$team->nom}}</h5>
                 <h5 class="card-title">{{$team->metier}}</h6>

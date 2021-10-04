@@ -12,7 +12,7 @@
 
 
 
-    <section class="container rounded text-white py-5 ">
+    <section class="container py-5 ">
 
         @if ($errors->any())
         <div class="container alert alert-danger">
@@ -29,22 +29,14 @@
             @method('PUT')
 
 
-    <div>
-    
-    
-    
-    
-    
-    <div>   
-        <label class="text-dark" for="titre">Titre: </label>
-        <input class="text-dark" name="titre" id="titre" value="{{ $service->titre }}">
-    </div>
-    <div>
-        <label class="text-dark" for="texte">Texte: </label>
-        <input class="text-dark" name="texte" id="texte" value="{{ $service->texte }}">
-    </div>
-    
-            <button class="btn btn-success w-25 mt-3 text-dark" type="submit">Modifier</button>
+   
+        <label class="my-3 fw-bold" for="titre">Titre: </label>
+        <input type="text"  name="titre" id="titre" value="{{ $service->titre }}">
+
+        <label class="my-3 fw-bold" for="texte">Texte: </label>
+        <input type="text"  name="texte" id="texte" value="{{ $service->texte }}">
+
+        <button class="btn btn-success w-25 mt-4 text-dark" type="submit">Modifier</button>
         </form>
     </section>
 

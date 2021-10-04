@@ -24,9 +24,9 @@
                 <thead>
                     <tr>
                         <th scope="col">Id</th>
-                        <th scope="col">Image</th>
-                        <th scope="col">Description</th>
+                        {{-- <th scope="col">Image</th> --}}
                         <th scope="col">Nom</th>
+                        <th scope="col">Témoignage</th>
                         <th scope="col">Metier</th>
                         <th></th>
         
@@ -36,14 +36,14 @@
                     @foreach($testimonial as $data)
                     <tr>
                         <th scope="row">{{$data->id}}</th>
-                        <th scope="row"><img src="{{ asset("img/" . $data->image) }}" alt=""></th>
-                        <td>{{$data->description}}</td>
+                        {{-- <th scope="row"><img src="{{ asset("img/" . $data->image) }}" alt=""></th> --}}
                         <td>{{$data->nom}}</td>
+                        <td>{{$data->description}}</td>
                         <td>{{$data->metier}}</td>
                         <td>
                         <div class="d-flex justify-content-around my-3">
                                         <a class="btn btn-primary text-black" href="{{route('testimonials.show', $data->id)}}">Détails</a>
-                                        <a class="btn btn-warning" href="{{route('testimonials.edit', $data->id)}}">Modifier</a>
+                                        <a class="btn btn-warning mx-2" href="{{route('testimonials.edit', $data->id)}}">Modifier</a>
                                         <form action="{{route('testimonials.destroy', $data->id)}}" method="post">
                                             @csrf
                                             @method('DELETE')

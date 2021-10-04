@@ -1,7 +1,7 @@
 @extends('backoffice.template.mainback')
 
 @section('title')
-    Creer un service
+    ajoutez un service
 @endsection
 
 
@@ -26,17 +26,17 @@
                 @csrf
                 
                 
-                <label for="titre">Titre: </label>
+                <label class="my-3 fw-bold" for="titre">Titre: </label>
                 <input type="text" value="{{old('titre')}}" name="titre" id="titre">
 
-                <label for="texte">Texte: </label>
+                <label class="my-3 fw-bold" for="texte">Texte: </label>
                 <input type="text" value="{{old('texte')}}" name="texte" id="texte">
 
                 
         
                 
         
-                <button class="btn btn-success mt-3 w-25" type="submit">Ajouter</button>
+                <button class="btn btn-success mt-5 w-25" type="submit">Ajouter</button>
             </form>
         </section>
     </div>

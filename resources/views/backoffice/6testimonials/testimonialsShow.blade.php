@@ -1,21 +1,21 @@
 @extends('backoffice.template.mainback')
 
 @section('title')
-    Montrer un témoignage
+    témoignage de {{$testimonial->nom}}
 @endsection
 
 
 @section('content')
     <div>
-        <section class="container">
+        <section class="container d-flex justify-content-center">
 
-            <div class="card" style="width: 18rem;">
-                <img src="{{asset('img/'.$testimonial->image)}}" class="card-img-top" alt="...">
+            <div class="card" style="width: 22rem;">
+                <img src="{{asset('img/'.$testimonial->image)}}" style="width: 22rem;" class="card-img-top" alt="...">
                 <div class="card-body">
                 <h5 class="card-title">{{$testimonial->nom}}</h5>
                 <h5 class="card-title">{{$testimonial->metier}}</h6>
                 <p class="card-text">{{$testimonial->description}}</p>
-                  <div class="d-flex justify-content-center mb-5">
+                  <div class="d-flex justify-content-center my-4">
                     <a class="btn btn-warning mx-2" href="{{route('testimonials.edit', $testimonial->id)}}">Modifier</a>
                     <form action="{{route('testimonials.destroy', $testimonial->id)}}" method="post">
                         @csrf
