@@ -32,7 +32,7 @@ class PortfolioPolicy
     {
         //
     }
-
+ 
     /**
      * Determine whether the user can create models.
      *

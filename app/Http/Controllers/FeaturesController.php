@@ -26,6 +26,7 @@ class FeaturesController extends Controller
      */
     public function create()
     {
+
         return view('backoffice.3features.featureCreate');
     }
 
@@ -37,6 +38,7 @@ class FeaturesController extends Controller
      */
     public function store(Request $request)
     {
+        $this->authorize('create', Feature::class);
         $request->validate([
             "url" => "required",
             "title" => "required",
@@ -91,6 +93,7 @@ class FeaturesController extends Controller
      */
     public function update(Request $request, Feature $feature)
     {
+        $this->authorize('update', $feature);
         $request->validate([
             "url" => "required",
             "title" => "required",
@@ -123,6 +126,7 @@ class FeaturesController extends Controller
      */
     public function destroy(Feature $feature)
     {
+        $this->authorize('update', $feature);
         Storage::disk('public')->delete('img/'. $feature->url);
         $feature->delete();
 
