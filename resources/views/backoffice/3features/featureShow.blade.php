@@ -9,7 +9,7 @@
     <div class="d-flex justify-content-center">
         <div class="card my-5" style="width: 30rem;">
             <div>
-                <img class="img-fluid" style=" width: 25rem" src="{{ asset('img/' . $feature->url) }}">
+                <img class="img-fluid" style=" width: 30rem" src="{{ asset('img/' . $feature->url) }}">
             </div>
             <div class="card-body">
                 <h4 class="card-title">{{ $feature->title }}</h4>

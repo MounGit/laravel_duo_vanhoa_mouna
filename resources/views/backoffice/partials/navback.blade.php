@@ -95,7 +95,7 @@
       </li>
       <li>
         <a href="{{route('titre')}}">
-         <i class='bx bx-left-arrow-alt' ></i>
+            <i class='bx bxs-brush'></i>
            <span class="links_name">Titres </span>
         </a>
         <span class="tooltip">Titres</span>

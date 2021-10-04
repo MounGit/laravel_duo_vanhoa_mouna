@@ -1,7 +1,7 @@
 @extends('backoffice.template.mainback')
 
 @section('title')
-    Détails {{$portfolio->name}}
+   portfolio Détails {{$portfolio->name}}
 @endsection
 
 

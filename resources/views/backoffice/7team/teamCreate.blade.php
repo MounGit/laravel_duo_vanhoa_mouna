@@ -1,7 +1,7 @@
 @extends('backoffice.template.mainback')
 
 @section('title')
-    Editer Teams
+    Ajoutez un membre à l'équipe
 @endsection
 
 
@@ -24,15 +24,14 @@
         
             <form class="container d-flex flex-column w-75" action="{{route('teams.store')}}" enctype="multipart/form-data" method="post">
                 @csrf
-                <label for="image">Image</label>
-                <input type="file" name="image" id="image" value="{{old('image')}}">
-                
-                
 
-                <label for="nom">Nom: </label>
+                <label for="nom">Nom : </label>
                 <input type="text" value="{{old('nom')}}" name="nom" id="nom">
 
-                <label for="metier">Metier: </label>
+                <label for="image">Photo : </label>
+                <input type="file" name="image" id="image" value="{{old('image')}}">
+
+                <label for="metier">Métier : </label>
                 <input type="text" value="{{old('metier')}}" name="metier" id="metier">
         
                 

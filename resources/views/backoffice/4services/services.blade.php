@@ -1,7 +1,7 @@
 @extends('backoffice.template.mainback')
 
 @section('title')
-    Témoignages
+    services
 @endsection
 
 
