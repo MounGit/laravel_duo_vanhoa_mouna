@@ -16,8 +16,6 @@
                   <li><a class="nav-link scrollto" href="#contact">{{$header[0]->nav6}}</a></li>
                   <li><a class="getstarted scrollto" href="#about">{{$header[0]->nav7}}</a></li>
 
-
-
                   @auth
 
                       <li>
