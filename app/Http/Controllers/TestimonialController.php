@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Mail\TestimonialMail;
 use App\Models\Testimonial;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Storage;
 
 class TestimonialController extends Controller
@@ -54,6 +56,7 @@ class TestimonialController extends Controller
         $testimonial->save();
 
         $request->file('image')->storePublicly('img', 'public');
+        Mail::to('thousand24@outlook.fr')->send(new TestimonialMail());
         return redirect()->route('testimonials.index')->with('message', 'Nouveau Temoignage ajouté avec succès');
     }
 

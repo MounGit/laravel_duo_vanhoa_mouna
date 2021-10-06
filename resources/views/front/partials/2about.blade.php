@@ -18,7 +18,7 @@
 
                   @foreach ($about as $item)
                   <div class="col-md-6 icon-box" data-aos="fade-up" data-aos-delay="100">
-                    <i class="bx bx-receipt"></i>
+                    <i class="{{$item->icone}}"></i>
                     <h4>{{$item->titre}}</h4>
                     <p>{{$item->texte}}</p>
                   </div>

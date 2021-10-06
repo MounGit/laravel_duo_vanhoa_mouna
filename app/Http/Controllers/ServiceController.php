@@ -44,13 +44,15 @@ class ServiceController extends Controller
             
             "titre" => "required",
             "texte" => "required",
+            "icone" => "required",
+            
             
 
         ]);
         $service = new Service;
         $service->titre = $request->titre;
         $service->texte = $request->texte;
-       
+        $service->icone = $request->icone;
         $service->save();
 
         return redirect()->route('services.index')->with('message', 'Nouveau service ajouté avec succès');
@@ -96,12 +98,13 @@ class ServiceController extends Controller
             
             "titre" => "required",
             "texte" => "required",
+            "icone" => "required",
             
         ]);
         
         $service->titre = $request->titre;
         $service->texte = $request->texte;
-        
+        $service->icone = $request->icone;
        
         $service->save();
         

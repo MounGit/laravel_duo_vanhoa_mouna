@@ -15,32 +15,41 @@ class AboutSeeder extends Seeder
     public function run()
     {
         DB::table('abouts')->insert([
-            [
+            
                  
                   
                   "titre"=>"Corporis voluptates sit",
-                  "texte"=>"Consequuntur sunt aut quasi enim
-                   aliquam quae harum pariatur laboris nisi ut aliquip"
-             ],[
+                  "texte"=>"Consequuntur sunt aut quasi enim aliquam quae harum pariatur laboris nisi ut aliquip",
+                   "icone"=>"bx bx-receipt"
+        ]);
+        DB::table('abouts')->insert([
+            
+                 
+                  
+            "titre"=>"Corpouuus voluptates sit",
+            "texte"=>"Consequuntur sunt aut quasi enim aliquam quae harum pariatur laboris nisi ut aliquip",
+             "icone"=>"bx bx-receipt"
+  ]);
+        /* ,[
                  
                   
                   "titre"=>"Ullamco laboris nisi",
-                  "texte"=>"Excepteur sint occaecat 
-                  cupidatat non proident, sunt in culpa
-                   qui officia deserunt"
+                  "texte"=>"Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt",
+                   "icone"=>"bx bx-cube-alt"
              ],[
                  
                   
                   "titre"=>"Labore consequatur",
-                  "texte"=>"Aut suscipit aut cum nemo deleniti
-                   aut omnis. Doloribus ut maiores omnis facere"
+                  "texte"=>"Aut suscipit aut cum nemo deleniti aut omnis. Doloribus ut maiores omnis facere",
+                   "icone"=>"bx bx-images"
              ],[
                  
                   
                 "titre"=>"Beatae veritatis",
-                "texte"=>"Expedita veritatis consequuntur
-                 nihil tempore laudantium vitae denat pacta"
+                "texte"=>"Expedita veritatis consequuntur nihil tempore laudantium vitae denat pacta",
+                 "icone"=>"bx bx-shield"
+           ],[
            ]
-         ]);
+         ]); */
     }
 }
