@@ -20,8 +20,9 @@
 
             <div class="row portfolio-container">
           @foreach ($portfolio as $data)
-                <div class="col-4 portfolio-item filter-app" >
-    
+                {{-- <div class="col-4 portfolio-item filter-app" > --}}
+                      <div class="col-4 portfolio-item filter-{{$data->category}}" >
+
                         <div class="portfolio-wrap">
             
 
