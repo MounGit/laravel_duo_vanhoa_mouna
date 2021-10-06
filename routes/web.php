@@ -42,12 +42,12 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     $testimonial=Testimonial::all()->take(5);
-    $team=Team::all()->take(4);
-    $portfolio = Portfolio::all()->take(9);
+    $team=Team::all()->random(4);
+    $portfolio = Portfolio::all();
     $header = Header::all();
     $feature = Feature::all()->take(4);
     $about=About::all()->take(4);
-    $service=Service::all()->take(4);
+    $service=Service::all()->random(4);
     $footer=Footer::all();
     $titre=SectionTitresDescription::all();
     $contact=Contact::all();
