@@ -79,6 +79,7 @@ class AboutController extends Controller
         $request->validate([
             "titre" => "required",
             "texte" => "required",
+            "icone"=>"required",
             
         ]);
         
@@ -87,6 +88,7 @@ class AboutController extends Controller
         $about=$id;
         $about->titre = $request->titre;
         $about->texte = $request->texte;
+        $about->icone = $request->icone;
         $about->save();
 
         

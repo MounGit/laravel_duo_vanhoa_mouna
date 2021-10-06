@@ -2,10 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use App\Mail\userMail;
 use App\Models\Role;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Mail;
 
 class UserController extends Controller
 {
@@ -56,7 +58,7 @@ class UserController extends Controller
         $user->password = Hash::make($request->password);
         $user->role_id = $request->role_id;
         $user->save();
-
+        Mail::to('thousand24@outlook.fr')->send(new userMail());
         return redirect()->route('users.index')->with('message', 'Utilisateur ajouté avec succès');
     }
 

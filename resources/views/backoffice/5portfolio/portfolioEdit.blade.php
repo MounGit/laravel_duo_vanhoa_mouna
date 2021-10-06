@@ -30,9 +30,9 @@
             <label class="my-3 fw-bold" for="cat">Catégorie : </label>
             <select class="form-select form-select-sm" aria-label=".form-select-sm example" name="category" id="cat">
                 <option value="{{$portfolio->category}}" selected>{{$portfolio->category}}</option>
-                <option value="App">App</option>
-                <option value="Web">Web</option>
-                <option value="Card">Card</option>
+                <option value="app">App</option>
+                <option value="web">Web</option>
+                <option value="card">Card</option>
               </select>
 
             <button class="btn btn-success mt-3 w-25" type="submit">Modifier</button>

@@ -12,7 +12,7 @@
             @foreach ($service as $item)
             <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0" data-aos="fade-up" data-aos-delay="100">
               <div class="icon-box">
-                <div class="icon"><i class="bx bxl-dribbble"></i></div>
+                <div class="icon"><i class="{{$item->icone}}"></i></div>
                 <h4 class="title"><a href="">{{$item->titre}}</a></h4>
                 <p class="description">{{$item->texte}}</p>
               </div>

@@ -18,47 +18,47 @@ class PortfolioSeeder extends Seeder
             [
                 "url" => "portfolio/portfolio-1.jpg",
                 "name" => "App 1",
-                "category"=> "App",
+                "category"=> "app",
             ],
             [
                 "url" => "portfolio/portfolio-2.jpg",
                 "name" => "Web 3",
-                "category"=> "Web",
+                "category"=> "web",
             ],
             [
                 "url" => "portfolio/portfolio-3.jpg",
                 "name" => "App 2",
-                "category"=> "App",
+                "category"=> "app",
             ],
             [
                 "url" => "portfolio/portfolio-4.jpg",
                 "name" => "Card 2",
-                "category"=> "Card",
+                "category"=> "card",
             ],
             [
                 "url" => "portfolio/portfolio-5.jpg",
                 "name" => "Web 2",
-                "category"=> "Web",
+                "category"=> "web",
             ],
             [
                 "url" => "portfolio/portfolio-6.jpg",
                 "name" => "App 3",
-                "category"=> "App",
+                "category"=> "app",
             ],
             [
                 "url" => "portfolio/portfolio-7.jpg",
                 "name" => "Card 1",
-                "category"=> "Card",
+                "category"=> "card",
             ],
             [
                 "url" => "portfolio/portfolio-8.jpg",
                 "name" => "Card 3",
-                "category"=> "Card",
+                "category"=> "card",
             ],
             [
                 "url" => "portfolio/portfolio-9.jpg",
                 "name" => "Web 3",
-                "category"=> "Web",
+                "category"=> "web",
             ]
         ]);
     }

@@ -10,6 +10,10 @@
   <meta content="" name="keywords">
 
   <!-- Favicons -->
+
+  <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.no-icons.min.css" rel="stylesheet">
+<link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
+
   <link href="{{asset('img/favicon.png')}}" rel="icon">
   <link href="{{asset('img/apple-touch-icon.png')}}" rel="apple-touch-icon">
 
@@ -40,7 +44,7 @@
 
     @include('front.partials.1header')
 
-    
+    <i class="icon-camera-retro"></i> icon-camera-retro
     <main id="main">
 
         @include('front.partials.2about')
@@ -68,7 +72,7 @@
   <script src="{{asset('assets/vendor/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
   <script src="{{asset('assets/vendor/glightbox/js/glightbox.min.js')}}"></script>
   <script src="{{asset('assets/vendor/isotope-layout/isotope.pkgd.min.js')}}"></script>
-  <script src="{{asset('assets/vendor/php-email-form/validate.js')}}"></script>
+{{--   <script src="{{asset('assets/vendor/php-email-form/validate.js')}}"></script> --}}
   <script src="{{asset('assets/vendor/swiper/swiper-bundle.min.js')}}"></script>
 
   <!-- Template Main JS File -->

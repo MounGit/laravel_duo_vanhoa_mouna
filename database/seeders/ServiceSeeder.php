@@ -21,26 +21,31 @@ class ServiceSeeder extends Seeder
                   "titre"=>"Lorem Ipsum",
                   "texte"=>"Voluptatum deleniti atque
                    corrupti quos dolores et quas molestias 
-                   excepturi"
+                   excepturi",
+                  "icone"=> "bx bxl-dribbble"
              ],[
                  
                   
                   "titre"=>"Sed ut perspiciatis",
                   "texte"=>"Duis aute irure dolor in
                    reprehenderit in voluptate velit esse 
-                   cillum dolore"
+                   cillum dolore",
+                   "icone"=> "bx bx-file"
              ],[
                  
                   
                   "titre"=>"Magni Dolores",
                   "texte"=>"Excepteur sint occaecat 
                   cupidatat non proident, sunt in culpa
-                   qui officia"
+                   qui officia",
+                   "icone"=> "bx bx-tachometer"
+                   
              ],[
                  
                   
                 "titre"=>"Nemo Enim",
-                "texte"=>"At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis"
+                "texte"=>"At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis",
+                "icone"=> "bx bx-layer"
            ]
          ]);
     }

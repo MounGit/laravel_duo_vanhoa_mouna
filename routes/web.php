@@ -5,6 +5,7 @@ use App\Http\Controllers\FeaturesController;
 use App\Http\Controllers\HeaderController;
 use App\Http\Controllers\AboutController;
 use App\Http\Controllers\FooterController;
+use App\Http\Controllers\MailController;
 use App\Http\Controllers\TeamController;
 use App\Http\Controllers\TestimonialController;
 use App\Models\Testimonial;
@@ -160,5 +161,14 @@ Route::get('/titre/{id}/edit', [SectionTitresDescriptionController::class, 'edit
 Route::put('/titre/{id}/update', [SectionTitresDescriptionController::class, 'update'])
 
 ->name('titreUpdate');
+
+Route::post('/sendmail',[MailController::class,'sendMail'])
+
+->name('sendMail');
+
+/* Route::get('/sendMailTestimonial',function(){
+    $testimonialMail=Testimonial::all();
+    return view('testimonialMail',compact('testimonialMail'));
+}); */
 
 require __DIR__.'/auth.php';
